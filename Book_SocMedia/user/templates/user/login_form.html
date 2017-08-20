@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
 <body>
+{#    <h3 id="h1" {% is_hidden %}>Wrong Username or Password</h3>#}
     <form method="POST" action = "/user/login">
         username: <input name="username" type="text"></input> <br>
         password: <input name="password" type="password"></input><br>
         {% csrf_token %}
-        <input name="Submit" type="submit">
+        <input name="Submit" type="submit"><br>
+        <div class="g-recaptcha" data-sitekey="6LcRhi0UAAAAALTZ2SxeBtsn9dLdoXEpE66Zj0W-"></div>
     </form>
 </body>
 </html>
