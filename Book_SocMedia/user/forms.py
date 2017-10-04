@@ -11,7 +11,8 @@ class SignUpForm(UserCreationForm):
     bio = forms.CharField(max_length = 500, required = False, help_text = 'Optional')
     location = forms.CharField(max_length=30, required=False)
     phone_number = forms.IntegerField(max_value = 9999999999, required=False)
+    avatar = forms.ImageField(required = False)
     class Meta:
         model = User
-        fields = ('username', 'name', 'family_name', 'email', 'password1', 'password2', 'bio', 'phone_number',
+        fields = ('username', 'name', 'family_name', 'email', 'password', 'bio', 'phone_number',
                   'birth_date', 'location')

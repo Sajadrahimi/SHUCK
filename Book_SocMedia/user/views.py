@@ -23,14 +23,6 @@ def login(request) :
         # return HttpResponse(template.render({'is_hidden'|'hidden'}, request))
         return HttpResponse("Wrong Username or Password")
 def registeration(request):
-    #
-    # name = request.POST.get("name")
-    # family_name = request.POST.get("family_name")
-    # phone_number = request.POST.get("phone_number")
-    # bio = request.POST.get("bio")
-    # location = request.POST.get("location")
-    # birth_date = request.POST.get("birth_date")
-    #
     if request.method == 'POST':
         print("_________________ I'm HERE ________________")
         form = SignUpForm(request.POST)
@@ -42,7 +34,8 @@ def registeration(request):
             password = form.cleaned_data.get("password")
             user = authenticate(request, username = username, password = password)
             DjangoLogin(request, user)
-            return HttpResponse("Signed Up " + username + " as " + form.cleaned_data.get("name"))
+            return HttpResponse("Signed Up " + username + " as " + form.cleaned_data.get("name") + "<img src = "
+                                                                                                   "\"+ reuqest.FILES +\"/>")
 
         else:
             return HttpResponse(form.error_messages)

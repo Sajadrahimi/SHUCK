@@ -10,6 +10,7 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
     phone_number = models.IntegerField(max_length = 12, blank = True)
+    avatar = models.ImageField(blank = True, upload_to = 'avatars')
     django_user = models.OneToOneField(DjangoUser)
     types = (
         ('SU', 'Super User'),
