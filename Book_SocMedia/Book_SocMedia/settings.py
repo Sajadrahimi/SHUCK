@@ -28,8 +28,13 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+LOCAL_APPS = [
+    'user',
+    'Book'
+]
 INSTALLED_APPS = [
+    'user',
+    'Book',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
