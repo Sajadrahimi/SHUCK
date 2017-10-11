@@ -35,6 +35,7 @@ LOCAL_APPS = [
 INSTALLED_APPS = [
     'user',
     'Book',
+    'api',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',

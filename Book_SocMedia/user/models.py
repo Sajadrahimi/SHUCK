@@ -5,7 +5,7 @@ from django.contrib.auth.models import User as DjangoUser
 
 # Create your models here.
 
-class Profile(models.Model) :
+class User(models.Model) :
     name = models.CharField(max_length = 20, null = False, blank = False)
     family_name = models.CharField(max_length = 30, null = False, blank = False)
     birth_date = models.DateField(null = False, blank = True)
@@ -25,3 +25,5 @@ class Profile(models.Model) :
 
     def __str__(self) :
         return str(self.django_user)
+
+

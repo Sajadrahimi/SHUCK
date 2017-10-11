@@ -47,7 +47,7 @@ class Translator(models.Model) :
 
 
 class Rate(models.Model) :
-    user = models.OneToOneField('user.Profile')
+    user = models.OneToOneField('user.User')
     value = models.IntegerField(choices = (
         (5, 'Excellent'),
         (4, 'Good'),
@@ -63,7 +63,7 @@ class Rate(models.Model) :
 
 
 class Comment(models.Model) :
-    user = models.OneToOneField('user.Profile')
+    user = models.OneToOneField('user.User')
     text = models.TextField(max_length = 500, blank = False)
 
     CommentOnBook = models.OneToOneField('Book.Book', null = True)
