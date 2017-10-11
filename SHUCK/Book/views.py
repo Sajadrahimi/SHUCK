@@ -1,23 +1,13 @@
 from django.http import HttpResponse
-from django.template import loader
 
 from .models import Author
 
-def AddBook(request):
-    if request.method == 'GET':
-        return HttpResponse("Add Book Was Here")
 
-def getAuthorBooks_form(request) :
-    template = loader.get_template('Book/getAuthorBooks.html')
-    return HttpResponse(template.render({}, request))
-
-def showAuthorBooks(request, AuthorName):
+# Return Books of an Author
+def showAuthorBooks(request, AuthorName) :
     print("SHOW AUTHOR BOOKS CALLED \t", AuthorName)
-    if request.method == 'GET':
-        if  Author.isAuthorExists(AuthorName):
+    if request.method == 'GET' :
+        if Author.isAuthorExists(AuthorName) :
             return HttpResponse(Author.getAuthorBooks(AuthorName))
-        else:
+        else :
             return HttpResponse("Not Found")
-
-def showAuthor(request):
-    return HttpResponse(Author.getAuthorBooks("AuthorTest"))
