@@ -4,17 +4,15 @@ from django.db import models
 class Author(models.Model) :
     AuthorName = models.CharField(max_length = 50, blank = False)
 
-    # returns an Author with a given name
+
     @staticmethod
     def getAuthorByName(name):
         return Author.objects.filter(AuthorName = name)
 
-    # returns books of an author with a given AuthorName
     @staticmethod
     def getAuthorBooks(name) :
         return Book.objects.filter(BookAuthor = Author.getAuthorByName(name))
 
-    # checks if an author exists
     @staticmethod
     def isAuthorExists(name):
         if Author.objects.filter(AuthorName = name).count() != 0:
@@ -29,8 +27,7 @@ class Author(models.Model) :
 class Publisher(models.Model) :
     PublisherName = models.CharField(max_length = 50, blank = False)
 
-    # returns books of an author
-    #MUST BE CHANGED
+
     def getPublisherBooks(self) :
         return Book.objects.get(BookTranslator = self)
 
@@ -41,7 +38,7 @@ class Publisher(models.Model) :
 class Translator(models.Model) :
     TranslatorName = models.CharField(max_length = 50, blank = False)
 
-    # MUST BE CHANGED
+
     def getTranslatorBooks(self) :
         return Book.objects.get(BookTranslator = self)
 

@@ -6,7 +6,6 @@ from .forms import SignUpForm
 from django.template import loader
 
 
-# Login and check re-Captcha
 def login(request) :
     username = request.POST["username"]
     password = request.POST["password"]
@@ -19,14 +18,18 @@ def login(request) :
     elif request.POST["g-recaptcha-response"] == '':
         return HttpResponse("You Bastard ROBOT")
     else :
+        # ERR
+        # template = loader.get_template('user/login_form.html')
+        # return HttpResponse(template.render({'is_hidden'|'hidden'}, request))
         return HttpResponse("Wrong Username or Password")
-
-# Registration and Automatic Login
 def registeration(request):
     if request.method == 'POST':
+        print("_________________ I'm HERE ________________")
         form = SignUpForm(request.POST)
         if form.is_valid():
+            print("_____________ Form is Valid _____________")
             form.save()
+            print("_____ PASSWORD: ", form.cleaned_data.get("password"))
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(request, username = username, password = password)
@@ -36,14 +39,14 @@ def registeration(request):
 
         else:
             return HttpResponse(form.error_messages)
-#Loads Login Form
+
 def loign_form(request) :
     template = loader.get_template('user/login_form.html')
     return HttpResponse(template.render({}, request))
 
-#Loads Registration Form
 def registration_form(request):
-
+    # template = loader.get_template("user/registration_form.html")
+    # return HttpResponse(template.render({}, request))
     if request.method == 'GET':
         form = SignUpForm()
         return render(request, 'user/registration_form.html', {'form' : form})
