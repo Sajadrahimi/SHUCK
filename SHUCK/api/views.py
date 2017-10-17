@@ -5,16 +5,28 @@ from Book.models import Book
 from user.models import User
 from django.contrib.auth.models import User as DjangoUser
 
-class BookViewSet(viewsets.ModelViewSet):
+class BookViewSetByPrimaryKey(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+    lookup_field = 'pk'
+
+class BookViewSetByBookName(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    lookup_field = 'BookName'
+
+class BookViewSetByBookPublisher(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    lookup_field = 'BookPublisher'
+
+class BookViewSetByBookAuthor(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    lookup_field = 'BookAuthor'
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSetByName(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-
-class DjangoUserViewSet(viewsets.ModelViewSet):
-    queryset = DjangoUser.objects.all()
-    serializer_class = DjangoUserSerializer
+    lookup_field = 'name'
