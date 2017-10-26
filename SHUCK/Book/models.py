@@ -3,36 +3,13 @@ from django.db import models
 
 class Author(models.Model) :
     AuthorName = models.CharField(max_length = 50, blank = False)
-    AuthorBooks = models.ForeignKey('Book', related_name = 'AuthorBooks',null = True)
-
-    @staticmethod
-    def getAuthorByName(name) :
-        return Author.objects.filter(AuthorName = name)
-
-    @staticmethod
-    def getAuthorBooks(name) :
-        return Book.objects.filter(BookAuthor = Author.getAuthorByName(name))
-
-    @staticmethod
-    def isAuthorExists(name) :
-        if Author.objects.filter(AuthorName = name).count() != 0 :
-            return True
-        else :
-            return False
 
     def __str__(self) :
         return self.AuthorName
 
 
-
-
-
 class Translator(models.Model) :
     TranslatorName = models.CharField(max_length = 50, blank = False)
-
-
-    def getTranslatorBooks(self) :
-        return Book.objects.get(BookTranslator = self)
 
     def __str__(self) :
         return self.TranslatorName
@@ -68,10 +45,11 @@ class Comment(models.Model) :
 class Book(models.Model) :
     BookName = models.CharField(max_length = 50, null = False, blank = False)
     BookPublisher = models.ForeignKey('Publisher', null = True)
-    # BookAuthor = models.ForeignKey('Author', null = True)
-    # BookTranslator = models.ForeignKey('Translator', blank = True, null = True)
+    BookAuthor = models.ForeignKey('Author', null = True)
+    BookTranslator = models.ForeignKey('Translator', blank = True, null = True)
     BookDateOfPublish = models.DateField(null = True, blank = True)
     BookImage = models.ImageField(null = True, blank = True)
+    BookPageCount = models.IntegerField(null = True)
     BookSummary = models.TextField(blank = True, max_length = 1000)
     BookRatesCount = models.IntegerField(default = 0, blank = True, editable = False)
     BookRatesSum = models.IntegerField(default = 0, blank = True, editable = False)
@@ -95,9 +73,6 @@ class Book(models.Model) :
 
 class Publisher(models.Model) :
     PublisherName = models.CharField(max_length = 50, blank = False)
-
-    def getPublisherBooks(self) :
-        return Book.objects.get(BookTranslator = self)
 
     def __str__(self) :
         return self.PublisherName

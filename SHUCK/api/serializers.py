@@ -4,6 +4,17 @@ from Book.models import Publisher, Book, Author, Translator
 from rest_framework.fields import Field
 from user.models import User
 
+
+class PublisherSerializer(serializers.ModelSerializer) :
+    PublisherBooks = serializers.SerializerMethodField('getBooks')
+
+    def getBooks(self, Publisher):
+            return Book.objects.filter(BookPublisher = Publisher).values('id', 'BookName')
+    class Meta :
+        model = Publisher
+        fields = ['id', 'PublisherName', 'PublisherBooks']
+
+
 class PrimaryPublisherSerializer(serializers.ModelSerializer) :
 
     class Meta :
@@ -11,51 +22,60 @@ class PrimaryPublisherSerializer(serializers.ModelSerializer) :
         fields = ['id', 'PublisherName']
 
 
+class AuthorSerializer(serializers.ModelSerializer):
+    AuthorBooks = serializers.SerializerMethodField('getBooks')
+
+    def getBooks(self, Author):
+        return Book.objects.filter(BookAuthor = Author).values("id", "BookName")
+
+    class Meta :
+        model = Author
+        fields = ["id", 'AuthorName', 'AuthorBooks']
+
+
 class PrimaryAuthorSerializer(serializers.ModelSerializer) :
+
     class Meta :
         model = Author
         fields = ['id', 'AuthorName']
 
 
-
 class TranslatorSerializer(serializers.ModelSerializer) :
+    TranslatorBooks = serializers.SerializerMethodField('getBooks')
+
+    def getBooks(self, Translator) :
+        return Book.objects.filter(BookTranslator = Translator).values("id", "BookName")
+
     class Meta :
         model = Translator
-        fields = ['id', 'TranslatorName']
+        fields = ['id', 'TranslatorName', 'TranslatorBooks']
 
-
-class PrimaryBookSerializer(serializers.ModelSerializer) :
-#     BookPublisher = PrimaryPublisherSerializer()
-    # BookAuthor = PrimaryAuthorSerializer()
-    # BookTranslator = TranslatorSerializer()
-
+class PrimaryTranslatorSerializer(serializers.ModelSerializer) :
     class Meta :
-        model = Book
-        fields = ['id', 'BookName', 'BookSummary',  'BookImage']
-                  # 'BookAuthor', 'BookTranslator']
+        model = Translator
+        pass
+
+
+
 class BookSerializer(serializers.ModelSerializer) :
-    # BookAuthor = PrimaryAuthorSerializer()
-    # BookTranslator = TranslatorSerializer()
+    BookAuthor = PrimaryAuthorSerializer()
+    BookTranslator = TranslatorSerializer()
     BookPublisher = PrimaryPublisherSerializer()
     class Meta :
         model = Book
-        fields = ['id', 'BookName', 'BookSummary', 'BookPublisher', 'BookImage']
-                  # 'BookAuthor', 'BookTranslator']
+        fields = ['id', 'BookName', 'BookAuthor', 'BookTranslator','BookPublisher',
+                  'BookSummary',  'BookPageCount',  'BookImage']
 
 
-class PublisherSerializer(serializers.ModelSerializer) :
-    PublisherBooks = serializers.SerializerMethodField('getBooks')
-    def getBooks(self, Publisher):
-            return Book.objects.filter(BookPublisher = Publisher).values('BookName', 'id')
-    class Meta :
-        model = Publisher
-        fields = ['id', 'PublisherName', 'PublisherBooks']
-
-class AuthorSerializer(serializers.ModelSerializer) :
-    AuthorBooks = BookSerializer()
-    class Meta :
-        model = Author
-        fields = ['id', 'AuthorName', 'AuthorBooks']
+# class PrimaryBookSerializer(serializers.ModelSerializer) :
+#     BookPublisher = PrimaryPublisherSerializer()
+#     BookAuthor = PrimaryAuthorSerializer()
+#     BookTranslator = TranslatorSerializer()
+#
+#     class Meta :
+#         model = Book
+#         fields = ['id', 'BookName', 'BookSummary',  'BookImage'
+#                     , 'BookAuthor', 'BookTranslator']
 
 class DjangoUserSerializer(serializers.ModelSerializer):
 
