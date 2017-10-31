@@ -7,7 +7,8 @@ ListAllBooks = views.BookViewSetByPrimaryKey.as_view({
         })
 BookDetailsByPrimaryKey = views.BookViewSetByPrimaryKey.as_view({
     'get' : 'retrieve',
-    # 'post' : 'create'
+    'post' : 'create',
+    # 'put' : 'update',
         })
 BookDetailsByBookName = views.BookViewSetByBookName.as_view({
     'get' : 'retrieve',

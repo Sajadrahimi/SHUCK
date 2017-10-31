@@ -3,14 +3,14 @@ from django.db import models
 
 class Author(models.Model) :
     AuthorName = models.CharField(max_length = 50, blank = False)
-
+    AuthorBio = models.TextField(max_length = 1000, null = True, blank = True)
     def __str__(self) :
         return self.AuthorName
 
 
 class Translator(models.Model) :
-    TranslatorName = models.CharField(max_length = 50, blank = False)
-
+    TranslatorName = models.CharField(max_length = 50)
+    TranslatorBio = models.TextField(max_length = 1000, null = True, blank = True)
     def __str__(self) :
         return self.TranslatorName
 
@@ -43,7 +43,7 @@ class Comment(models.Model) :
 
 
 class Book(models.Model) :
-    BookName = models.CharField(max_length = 50, null = False, blank = False)
+    BookName = models.CharField(max_length = 50, null = True, blank = False)
     BookPublisher = models.ForeignKey('Publisher', null = True)
     BookAuthor = models.ForeignKey('Author', null = True)
     BookTranslator = models.ForeignKey('Translator', blank = True, null = True)
@@ -54,20 +54,10 @@ class Book(models.Model) :
     BookRatesCount = models.IntegerField(default = 0, blank = True, editable = False)
     BookRatesSum = models.IntegerField(default = 0, blank = True, editable = False)
     BookComments = models.ForeignKey('Book.Comment', null = True, blank = True, editable = False)
-    #
-    # def __init__(self, *args, **kwargs) :
-    #     super(Book, self).__init__(*args, **kwargs)
-    #     self.OldBookPublisher = self.BookPublisher
-    #     self.OldBookAuthor = self.BookAuthor
-    #
-    # def save(self, **kwargs) :
-    #
-    #     if self.OldBookPublisher != self.BookPublisher and self.OldBookPublisher is not None :
-    #         print("PUBLISHER CHANGED", "OLD PUB: ", self.OldBookPublisher.PublisherName)
-    #         Publisher.objects.get(PublisherName = \
-    #         self.OldBookPublisher.PublisherName).ChangePublisherBook(self)
-    #     super(Book, self).save(**kwargs)
 
+    def save(self,commit = True, **kwargs):
+        # print("*****************999", **kwargs)
+        super(Book, self).save(**kwargs)
     def __str__(self) :
         return self.BookName
 
