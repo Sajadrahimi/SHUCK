@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializers import BookSerializer, UserSerializer, DjangoUserSerializer, PublisherSerializer, AuthorSerializer
+from .serializers import BookSerializer, UserSerializer, PublisherSerializer, AuthorSerializer
 from rest_framework import viewsets
 from Book.models import Book, Publisher, Author
 from user.models import User
@@ -27,7 +27,12 @@ class BookViewSetByBookAuthor(viewsets.ModelViewSet):
     lookup_field = 'AuthorName'
 
 
-class UserViewSetByName(viewsets.ModelViewSet):
+class UserViewSetByPrimaryKey(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    lookup_field = 'name'
+    lookup_field = 'pk'
+
+class UserViewSetByUserName(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    lookup_field = 'username'

@@ -23,6 +23,10 @@ def login(request) :
         return HttpResponse("Wrong Username or Password")
 
 
+def printer(request):
+    print("**********************")
+    return HttpResponse(User.objects.filter(username = 'test').values('Reads'))
+
 def registration(request):
     if request.method == 'POST':
         print("is POST")

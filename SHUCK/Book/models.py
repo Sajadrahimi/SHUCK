@@ -53,11 +53,9 @@ class Book(models.Model) :
     BookSummary = models.TextField(blank = True, max_length = 1000)
     BookRatesCount = models.IntegerField(default = 0, blank = True, editable = False)
     BookRatesSum = models.IntegerField(default = 0, blank = True, editable = False)
-    BookComments = models.ForeignKey('Book.Comment', null = True, blank = True, editable = False)
+    BookComments = models.ForeignKey\
+        ('Book.Comment', null = True, blank = True, editable = False)
 
-    # def save(self,commit = True, **kwargs):
-        # print("*****************999", **kwargs)
-        # super(Book, self).save(**kwargs)
     def __str__(self) :
         return self.BookName
 
