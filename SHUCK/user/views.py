@@ -36,11 +36,10 @@ def registration(request):
             password = form.cleaned_data.get("password1")
             first_name = form.cleaned_data.get("first_name")
             last_name = form.cleaned_data.get("last_name")
+            email = form.cleaned_data.get("email")
             print(username, password, first_name, last_name)
-            # user = authenticate(username = username, password = password,
-            #                     first_name = first_name, last_name = last_name)
-            # print("************", user)
-            u = User.objects.create(username = username, password = password)
+            u = User.objects.create(username = username, password = password, email = email,
+                                    first_name = first_name, last_name = last_name)
             u.save()
             # u.shelves.objects.create(shelf_name = 'Read')
             return HttpResponse("Hello " + u.username)
