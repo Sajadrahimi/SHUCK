@@ -20,7 +20,7 @@ BookDetailsByBookPublisher = views.BookViewSetByBookPublisher.as_view({
         })
 UserDetailsByPrimaryKey = views.UserViewSetByPrimaryKey.as_view({
     'get' : 'retrieve',
-    'put' : 'update',
+    'post' : 'update',
 })
 UserDetailsByUserName = views.UserViewSetByUserName.as_view({
     'post' : 'create'

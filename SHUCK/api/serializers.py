@@ -232,6 +232,27 @@ class UserSerializer(serializers.ModelSerializer) :
     Reads = PrimaryBookSerializer(many = True)
     toReads = PrimaryBookSerializer(many = True)
     Readings = PrimaryBookSerializer(many = True)
+
+    def update(self, instance, validated_data):
+        if instance.username != validated_data.get('username', instance.username):
+            raise serializers.ValidationError({
+                "message" : "can't change username"
+            })
+        instance.email = validated_data.get('email', instance.email)
+        # instance.password = validated_data.get('password', instance.password)
+        instance.first_name = validated_data.get('first_name', instance.first_name)
+        instance.last_name = validated_data.get('last_name', instance.last_name)
+        instance.avatar = validated_data.get('avatar', instance.avatar)
+        instance.birth_date = validated_data.get('birth_date', instance.birth_date)
+        # instance.toReads = BookSerializer(validated_data.get('toReads', instance.toReads))
+        # instance.Readings = validated_data.get('Readings', instance.Readings)
+        # instance.Reads = validated_data.get('Reads', instance.Reads)
+        instance.bio = validated_data.get('bio', instance.bio)
+        instance.phone_number = validated_data.get('phone_number', instance.phone_number)
+        instance.location = validated_data.get('location', instance.location)
+        instance.save()
+        return instance
+
     class Meta :
         model = User
         fields = ['id', 'username', 'email', 'first_name', 'last_name', 'last_login',
