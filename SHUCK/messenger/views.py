@@ -1,18 +1,18 @@
 import json
 
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from user.models import Profile
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
 
-from SHUCK.decorators import ajax_required
-from SHUCK.messenger.models import Message
+# from SHUCK.decorators import ajax_required
+from .models import Message
 
 
 @login_required
 def inbox(request):
     conversations = Message.get_conversations(user=request.user)
-    users_list = User.objects.filter(
+    users_list = Profile.objects.filter(
         is_active=True).exclude(username=request.user).order_by('username')
     active_conversation = None
     messages = None
@@ -37,7 +37,7 @@ def inbox(request):
 @login_required
 def messages(request, username):
     conversations = Message.get_conversations(user=request.user)
-    users_list = User.objects.filter(
+    users_list = Profile.objects.filter(
         is_active=True).exclude(username=request.user).order_by('username')
     active_conversation = username
     messages = Message.objects.filter(user=request.user,
@@ -56,18 +56,18 @@ def messages(request, username):
 
 
 @login_required
-@ajax_required
+#@ajax_requiredx_required
 def delete(request):
     return HttpResponse()
 
 
 @login_required
-@ajax_required
+#@ajax_requiredx_required
 def send(request):
     if request.method == 'POST':
         from_user = request.user
         to_user_username = request.POST.get('to')
-        to_user = User.objects.get(username=to_user_username)
+        to_user = Profile.objects.get(username=to_user_username)
         message = request.POST.get('message')
         if len(message.strip()) == 0:
             return HttpResponse()
@@ -84,7 +84,7 @@ def send(request):
 
 
 @login_required
-@ajax_required
+#@ajax_requiredx_required
 def check(request):
     count = Message.objects.filter(user=request.user, is_read=False).count()
     return HttpResponse(count)

@@ -1,18 +1,17 @@
 from __future__ import unicode_literals
 
-from django.contrib.auth.models import User
+from user.models import Profile
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.html import escape
 from django.utils.translation import ugettext_lazy as _
-
 import bleach
-from SHUCK.activities.models import Activity
+from activities.models import Activity
 
 
 @python_2_unicode_compatible
 class Feed(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(Profile)
     date = models.DateTimeField(auto_now_add=True)
     post = models.TextField(max_length=255)
     parent = models.ForeignKey('Feed', null=True, blank=True)

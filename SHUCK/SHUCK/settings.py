@@ -10,14 +10,16 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from unipath import Path
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = Path(__file__).parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1xx_al8s*r@uf&4$i60s^*wg8m(l$428f*+h3sht#1+)8nvfnm'
-GOOGLE_RECAPTCHA_SECRET_KEY = '6LcRhi0UAAAAAJ9eL8GzmS1wG8x9e_2xmzRSfzrB'
+# GOOGLE_RECAPTCHA_SECRET_KEY = '6LcRhi0UAAAAAJ9eL8GzmS1wG8x9e_2xmzRSfzrB'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -26,16 +28,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 LOCAL_APPS = [
-    'user',
-    'Book',
+
+]
+INSTALLED_APPS = [
     'user',
     'Book',
     'api',
     'feeds',
     'activities',
-    'messenger'
-]
-INSTALLED_APPS = [
+    'messenger',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -60,9 +62,12 @@ ROOT_URLCONF = 'SHUCK.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-                 os.path.join(BASE_DIR, 'user', 'templates'),
-
+        # 'DIRS': [
+        #          os.path.join(BASE_DIR, 'user', 'templates'),
+        #
+        # ],
+        'DIRS' : [
+            PROJECT_DIR.child('templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -103,7 +108,7 @@ DATABASES = {
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'user.Profile'
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

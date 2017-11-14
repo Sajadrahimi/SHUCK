@@ -3,7 +3,7 @@ from .serializers import BookSerializer, UserSerializer,\
     PublisherSerializer, AuthorSerializer, UserSignUpSerializer
 from rest_framework import viewsets
 from Book.models import Book, Publisher, Author
-from user.models import User
+from user.models import Profile
 from django.contrib.auth.models import User as DjangoUser
 
 class BookViewSetByPrimaryKey(viewsets.ModelViewSet):
@@ -29,11 +29,11 @@ class BookViewSetByBookAuthor(viewsets.ModelViewSet):
 
 
 class UserViewSetByPrimaryKey(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = Profile.objects.all()
     serializer_class = UserSerializer
     lookup_field = 'pk'
 
 class UserViewSetByUserName(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = Profile.objects.all()
     serializer_class = UserSignUpSerializer
     lookup_field = 'username'

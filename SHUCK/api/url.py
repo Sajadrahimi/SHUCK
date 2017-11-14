@@ -32,6 +32,6 @@ urlpatterns = [
     url(r'^getBook/ByName/(?P<BookName>\w+)$', BookDetailsByBookName),
     url(r'^getBook/ByAuthor/(?P<AuthorName>\w+)$', BookDetailsByBookAuthor),
     url(r'^getBook/ByPublisher/(?P<PublisherName>\w+)$', BookDetailsByBookPublisher),
-    url(r'^getUser/(?P<pk>[0-9]+)$', UserDetailsByPrimaryKey),
+    url(r'^getProfile/(?P<pk>[0-9]+)$', UserDetailsByPrimaryKey),
     url(r'^register/(?P<username>\w+)$', UserDetailsByUserName)
     ]

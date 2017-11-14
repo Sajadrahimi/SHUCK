@@ -20,5 +20,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^user/', include('user.url')),
     url(r'^book/', include('Book.url')),
-    url(r'^api/', include('api.url'))
+    url(r'^api/', include('api.url')),
+    url(r'^feeds/', include('feeds.url')),
+    url(r'^messenger/', include('messenger.url')),
 ]

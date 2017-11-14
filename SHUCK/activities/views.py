@@ -2,8 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from SHUCK.activities.models import Notification
-from SHUCK.decorators import ajax_required
+from .models import Notification
+# from SHUCK.decorators import ajax_required
 
 
 @login_required
@@ -20,7 +20,7 @@ def notifications(request):
 
 
 @login_required
-@ajax_required
+#@ajax_requiredx_required
 def last_notifications(request):
     user = request.user
     notifications = Notification.objects.filter(to_user=user,
@@ -35,7 +35,7 @@ def last_notifications(request):
 
 
 @login_required
-@ajax_required
+#@ajax_requiredx_required
 def check_notifications(request):
     user = request.user
     notifications = Notification.objects.filter(to_user=user,

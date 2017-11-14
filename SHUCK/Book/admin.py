@@ -3,7 +3,7 @@ from django.contrib.admin.widgets import FilteredSelectMultiple
 import django.forms as forms
 
 from .models import Book, Author, Translator, Publisher, Comment,Rate
-from user.models import User
+from user.models import Profile
 # Register your models here.
 
 # admin.site.register(Book)
