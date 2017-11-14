@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>صفحه ورود</title>
+
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="keywords" content="footer, contact, form, icons" />
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  </head>
+<body class="login-page-bg scrollbar-style-2">
+    
+    <div class="container">
+        <div class="row">
+            <div class="login-page-box">
+                <h1 class="text-center login-page-text-color">صفحه ورود</h1>
+                <div class="line-header-login"></div>
+                <div class="form-group form-login-page form-responsive">
+                  <label for="usr">نام کاربری:</label>
+                  <div class="inner-addon left-addon">
+                    <i class="login-icon glyphicon glyphicon-user user-glyph"></i>
+                    <input type="text" class="form-control login-page-input input-lg" id="usr" placeholder="نام کاربری">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">کلمه عبور:</label>
+                  <div class="inner-addon left-addon">
+                    <i class="login-icon glyphicon glyphicon-lock user-glyph"></i>
+                    <input type="password" class="form-control login-page-input input-lg" id="pwd" placeholder="رمز عبور">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-login-page center-block">ورود</button>
+                <div class="text-center forgot-pass-div">
+                    <a href="#" class="forgot-pass">رمز عبور خود را فراموش کرده ام</a><br>
+                    <!--<a href="#" class="forgot-pass">وارد شدن با اکانت گوگل<span class="caret"></span></a><br>
+                    <a href="#" class="forgot-pass">وارد شدن با اکانت فیسبوک</a><br>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
