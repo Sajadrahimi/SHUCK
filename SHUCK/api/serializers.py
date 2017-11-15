@@ -188,6 +188,11 @@ class PrimaryBookSerializer(serializers.ModelSerializer) :
 
 class UserSignUpSerializer(serializers.ModelSerializer):
 
+    token = serializers.SerializerMethodField('getToken')
+
+    def getToken(self, user):
+        return Token.objects.filter(user = user).values("key")
+
     def validate(self, attrs) :
         username = attrs['username']
         email = attrs['email']
@@ -221,6 +226,9 @@ class UserSignUpSerializer(serializers.ModelSerializer):
             phone_number = phone_number, bio = bio,
             birth_date = birth_date, avatar = avatar
         )
+        u.save()
+        u.token = Token.objects.get_or_create(user = u)[0]
+        u.save()
         authenticate(u)
         return u
 
@@ -231,6 +239,11 @@ class UserSignUpSerializer(serializers.ModelSerializer):
                   'birth_date', 'avatar', 'id', 'token']
 
 class UserLoginSerializer(serializers.ModelSerializer):
+    token = serializers.SerializerMethodField('getToken')
+
+    def getToken(self, user):
+        return Token.objects.filter(user = user).values("key")
+
     def validate(self, attrs):
         username = attrs['username']
         password = attrs['password']
