@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from rest_framework.authtoken.models import Token
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
@@ -60,15 +60,13 @@ class UserLoginByUserName(viewsets.ModelViewSet):
         username = request.data['username']
         password = request.data['password']
         print(username, password)
-        # if Profile.objects.filter(username = username).count() == 0:
-        #     raise serializers.ValidationError({
-        #         "message" : "wrong username"
-        #     })
-        # else:
-        # u = Profile.objects.get(username = username, password = password)
+
         u = authenticate(username = username, password = password)
-        return Response(UserSerializer(u).data)
-        # except Profile.DoesNotExist:
-        #     raise serializers.ValidationError({
-        #         "message" : "RIDIM"
-        #     })
+
+        if u is not None:
+            login(request, u)
+            return Response(UserSerializer(u).data)
+        else:
+             raise serializers.ValidationError({
+                "message" : "wrong username or password"
+                })
