@@ -15,13 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from core import views as core
+from search import views as search
 
 urlpatterns = [
-
+    url(r'^$', core.home, name = 'home'),
+    url(r'^search/$', search.search, name = 'search'),
+    url(r'^autocomplete/$', search.get_autocomplete_suggestions, name='autocomplete'),
+    url(r'^settings/$', core.settings, name='settings'),
+    url(r'^(?P<username>[^/]+)/$', core.profile, name='profile'),
+    url(r'^network/$', core.network, name='network'),
     url(r'^admin/', admin.site.urls),
     url(r'^user/', include('user.url')),
     url(r'^book/', include('Book.url')),
     url(r'^api/', include('api.url')),
-    url(r'^feeds/', include('feeds.url')),
+    url(r'^feeds/', include('feeds.url'), name = 'feeds'),
     url(r'^messenger/', include('messenger.url')),
 ]

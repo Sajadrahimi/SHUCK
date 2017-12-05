@@ -9,7 +9,8 @@ from django.template.context_processors import csrf
 from django.template.loader import render_to_string
 
 from activities.models import Activity
-# from .decorators import ajax_required
+
+from .decorators import ajax_required
 from feeds.models import Feed
 
 FEEDS_NUM_PAGES = 10
@@ -36,7 +37,7 @@ def feed(request, pk):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def load(request):
     from_feed = request.GET.get('from_feed')
     page = request.GET.get('page')
@@ -83,7 +84,7 @@ def _html_feeds(last_feed, user, csrf_token, feed_source='all'):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def load_new(request):
     last_feed = request.GET.get('last_feed')
     user = request.user
@@ -93,7 +94,7 @@ def load_new(request):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def check(request):
     last_feed = request.GET.get('last_feed')
     feed_source = request.GET.get('feed_source')
@@ -106,7 +107,7 @@ def check(request):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def post(request):
     last_feed = request.POST.get('last_feed')
     user = request.user
@@ -123,7 +124,7 @@ def post(request):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def like(request):
     feed_id = request.POST['feed']
     feed = Feed.objects.get(pk=feed_id)
@@ -143,7 +144,7 @@ def like(request):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def comment(request):
     if request.method == 'POST':
         feed_id = request.POST['feed']
@@ -167,7 +168,7 @@ def comment(request):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def update(request):
     first_feed = request.GET.get('first_feed')
     last_feed = request.GET.get('last_feed')
@@ -183,7 +184,7 @@ def update(request):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def track_comments(request):
     feed_id = request.GET.get('feed')
     feed = Feed.objects.get(pk=feed_id)
@@ -191,7 +192,7 @@ def track_comments(request):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def remove(request):
     try:
         feed_id = request.POST.get('feed')
