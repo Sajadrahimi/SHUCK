@@ -1,0 +1,436 @@
+
+/* **************** My CSS Code **************************/
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/eot/IRANSansWeb_Bold.eot');
+  src: url('../fonts/eot/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+     url('../fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+     url('../fonts/woff/IRANSansWeb_Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+     url('../fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/eot/IRANSansWeb_Medium.eot');
+  src: url('../fonts/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+     url('../fonts/woff2/IRANSansWeb_Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+     url('../fonts/woff/IRANSansWeb_Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+     url('../fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/eot/IRANSansWeb_Light.eot');
+  src: url('../fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+     url('../fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+     url('../fonts/woff/IRANSansWeb_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+     url('../fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/eot/IRANSansWeb_UltraLight.eot');
+  src: url('../fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+     url('../fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+     url('../fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+     url('../fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/eot/IRANSansWeb.eot');
+  src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+     url('../fonts/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+     url('../fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+     url('../fonts/ttf/IRANSansWeb.ttf') format('truetype');
+}
+.a{
+  text-decoration: none;
+}
+
+.logo{
+  margin: 10px 110px 0 0;
+}
+.left-header{
+  margin: 25px 0 0 110px;
+  text-decoration: none;
+}
+.left-header a{
+  text-decoration: none;
+}
+.left-header a:hover{
+  color: #ef5350;
+}
+.message-notification{
+  padding-right: 50px;
+}
+.left-header-font{
+  color: #455A64;
+}
+.top-menu{
+  float:right; 
+  color: white;
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+}
+.top-menu a{
+  color: white;
+  text-decoration: none;
+  padding: 10px 0 0 40px;
+}
+.top-menu a:hover{
+  color: #81D4FA;
+}
+.top-footer{
+  background: #00897B;
+  width: 100%;
+  height: 5px;
+}
+.sub-footer{
+  text-align: center;
+}
+.sub-footer a{
+  color: #00897B;
+  text-decoration: none;
+}
+.sub-footer a:hover{
+  color: #ef5350;
+}
+
+/********************* SIDEBAR ****************************/
+.side{
+  height: auto;
+  margin: 10px;
+  border: 2px solid #CFD8DC;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 5px 5px 5px gray;
+}
+.title-side{
+  background: #CFD8DC;
+  height: 40px;
+  padding-top: 10px;
+  color: black;
+  cursor:default;
+}
+.body-side1{
+  padding: 12px 0 12px 0;
+  line-height: 170%;
+  background: #f9f9f9;
+}
+.footer-side{
+  background: #CFD8DC;
+  height: 40px;
+  padding-top: 5px;
+}
+.side a{
+  text-decoration: none;
+  color: black;
+}
+.side a:hover{
+  color: #ef5350;
+}
+/********************** BODY *******************/
+.allservice{
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+.service{
+  display: inline-block;
+  width: 200px;
+  height: 110px;
+  background: #CFD8DC;
+  border-radius: 5px;
+  margin-right: 3px;
+  box-shadow: 5px 5px 5px gray;
+  transition: .3s;
+}
+.service:hover{
+  background: #B0BEC5;
+}
+.body-service{
+  color: #455A64;
+  padding: 10px 10px 0 0;
+  cursor: pointer;
+}
+.num-service{
+    font-size: 25pt;
+}
+.line-service{
+  width: 95%;
+  height: 2px;
+}
+.line-service-color1{
+  /*background: #66BB6A;*/
+  background: #06e406;
+}
+.line-service-color2{
+  background: #fca34c;
+}
+.line-service-color3{
+  background: #29B6F6;
+}
+.line-service-color4{
+  background: #ef5350;
+}
+.search{
+  display: inline-block;
+  background: #607D8B;
+  height: 45px;
+  margin: 20px 0 20px 0;
+  border-radius: 5px;
+  color: #CFD8DC;
+  /*box-shadow: 2px 2px 2px gray;*/
+}
+.box{
+  display: inline-block;
+  width: 410px;
+  height: 210px;
+  border-radius: 5px;
+  border-right: 2px solid #CFD8DC;
+  border-bottom: 2px solid #CFD8DC;
+  border-left: 2px solid #CFD8DC;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px gray;
+}
+.body-box{
+  overflow: auto;
+  height: 165px;
+}
+
+.box a{
+  text-decoration: none;
+  color: black;
+}
+.box a:hover{
+  color: #ef5350;
+}
+.title-box{
+  background: #CFD8DC;
+  height: 40px;
+  text-align: center;
+  padding-top: 10px;
+}
+.line-box1{
+  border-top: 2px solid #06e406;; 
+}
+.line-box2{
+  border-top: 2px solid #fca34c; 
+}
+.line-box3{
+  border-top: 2px solid #29B6F6; 
+}
+.line-box4{
+  border-top: 2px solid #ef5350; 
+}
+.update-box{
+  font-size: 9pt; 
+}
+.site-box{
+  font-size: 9pt;
+}
+
+/******   SCROLLBAR  *********/
+.scrollbar
+{
+  margin-left: 30px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+
+.force-overflow
+{
+  min-height: 450px;
+}
+
+#wrapper
+{
+  text-align: center;
+  width: 500px;
+  margin: auto;
+}
+.scrollbar-style-2::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.scrollbar-style-2::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #CFD8DC;
+}
+
+.scrollbar-style-2::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #CFD8DC;
+}
+
+.btn-succsess-color{
+  background: #607D8B;
+  transition: .3s;
+}
+
+.btn-succsess-color-border{
+  border-color: #607d7e;
+}
+
+.btn-succsess-color:hover{
+  background: #3b5e97;
+}
+
+.body-background{
+  background: #ECEFF1;
+}
+
+.logo-header-size{
+  width: 255px;
+  height: 60px;
+}
+
+.back-to-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px; 
+  right: 20px;
+  display:none;
+  background: #3b5e97;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+  padding-top: 12px;
+  border: none;
+}
+
+.bread{
+  margin-top: 10px;
+}
+
+.breadcrumb{
+  background: #ECEFF1;
+  border: 2px solid #97abb4;
+  border-radius: 5px;
+  padding: 10px 10px;
+  font-size: 15px;
+}
+
+.breadcrumb a{
+  color: #607D8B;
+  text-decoration: none;  
+}
+
+.breadcrumb a:hover{
+  color: #81D4FA;
+}
+
+.sign{
+  background: #607D8B;
+  border: none;
+}
+
+.dropdown-menu{
+  margin-top: 8px;
+}
+
+
+/************************ Login Page **************************/
+.login-page-bg{
+  background: #ECEFF1;
+}
+
+.login-page-box{
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 130px;
+}
+
+.line-header-login{
+  width: 100%;
+  height: 1px;
+  background: #CFD8DC;
+}
+
+.login-page-input{
+  border: 1px solid #CFD8DC;
+  background: #ECEFF1;
+}
+
+.form-login-page{
+  padding-top: 40px;
+}
+
+.login-page-text-color{
+  color: #607D8B;
+}
+
+.btn-login-page{
+  background: #607D8B;
+  color: white;
+  padding: 8px 30px 8px 30px;
+  transition: .5s;
+  font-size: 14pt;
+}
+
+.btn-login-page:hover{
+  background: #3b5e97;
+  color: white;
+}
+
+.forgot-pass{
+  color: #607D8B;
+}
+
+.forgot-pass-div{
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.forgot-pass-div a{
+  text-decoration: none;
+}
+
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.user-glyph{
+  margin-top: 2px;
+  color: #a9b1b9;
+  font-size: 1.7em;
+}
+
+.login-icon{
+  top: -1px;
+}
+

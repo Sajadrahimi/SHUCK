@@ -1,13 +1,13 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from django.contrib.auth import authenticate
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth import login as DjangoLogin
 from django.http import request, HttpResponse
 
 from Book.models import Book
 from rest_framework.authtoken.models import Token
-
-from .models import Profile, Shelf
+from feeds.models import Feed
+from .models import Profile
 from .forms import SignUpForm
 from django.template import loader
 
@@ -26,39 +26,6 @@ def login(request) :
         return HttpResponse("Wrong Username or Password")
 
 
-# def getReads(request):
-#     print("**********************")
-#     books = Profile.objects.filter(username = 'sajad2').values('Reads')
-#     out = []
-#     for b in books:
-#         book = Book.objects.get(pk = b['Reads'])
-#         out.append(book)
-#     return HttpResponse(out)
-# def getReads(request):
-#     print("**********************")
-#     books = Profile.objects.filter(username = 'sajad2').values('Reads')
-#     out = []
-#     for b in books:
-#         book = Book.objects.get(pk = b['Reads'])
-#         out.append(book)
-#     return HttpResponse(out)
-# def getToReads(request):
-#     print("**********************")
-#     books = Profile.objects.filter(username = 'sajad2').values('toReads')
-#     out = []
-#     for b in books:
-#         book = Book.objects.get(pk = b['toReads'])
-#         out.append(book)
-#     return HttpResponse(out)
-# def getReadings(request):
-#     print("**********************")
-#     books = Profile.objects.filter(username = 'sajad2').values('Readings')
-#     out = []
-#     for b in books:
-#         book = Book.objects.get(pk = b['Readings'])
-#         out.append(book)
-#     return HttpResponse(out)
-#
 def registration(request):
     if request.method == 'POST':
         print("is POST")
@@ -70,15 +37,14 @@ def registration(request):
             first_name = "" #form.cleaned_data.get("first_name")
             last_name = "" #form.cleaned_data.get("last_name")
             email = "" #form.cleaned_data.get("email")
-            print(username, password, first_name, last_name)
-            u = Profile.objects.create(username = username,
-                                       email = email, first_name = first_name,
-                                       last_name = last_name)
-            u.set_password(password)
-            # token = Token.objects.create(user = u)
-            u.save()
-            return HttpResponse("Hello " + u.username)
-
+            Profile.objects.create_user(username = username, password = password,
+                                     email = email)
+            user = authenticate(username = username, password = password)
+            auth_login(request, user)
+            welcome_post = '{0} has joined SHUCK.'.format(user.username)
+            feed = Feed(user = user, post = welcome_post)
+            feed.save()
+            return redirect('/')
         else:
             print(form.cleaned_data.get('password1'), form.cleaned_data.get('password2'))
             return HttpResponse(form.error_messages)

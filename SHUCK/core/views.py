@@ -22,6 +22,7 @@ from PIL import Image
 
 
 def home(request):
+    print("IN HOME")
     if request.user.is_authenticated():
         return feeds(request)
     else:
@@ -30,6 +31,7 @@ def home(request):
 
 @login_required
 def network(request):
+    print("IN NETWORK")
     users_list = Profile.objects.filter(is_active=True).order_by('username')
     paginator = Paginator(users_list, 100)
     page = request.GET.get('page')
@@ -47,6 +49,7 @@ def network(request):
 
 @login_required
 def profile(request, username):
+    print("IN PROFILE: ", username)
     page_user = get_object_or_404(Profile, username=username)
     all_feeds = Feed.get_feeds().filter(user=page_user)
     paginator = Paginator(all_feeds, FEEDS_NUM_PAGES)
@@ -66,12 +69,7 @@ def profile(request, username):
     data = {
         'page_user': page_user,
         'feeds_count': feeds_count,
-        # 'article_count': article_count,
-        # 'article_comment_count': article_comment_count,
-        # 'global_interactions': activity_count + article_comment_count + messages_count,  # noqa: E501
-        # 'bar_data': [
-        #     feeds_count, article_count, article_comment_count, activity_count],
-        'bar_labels': json.dumps('["Feeds", "Articles", "Comments", "Questions", "Activities"]'),  # noqa: E501
+        'bar_labels': json.dumps('["Feeds", "Comments", "Questions", "Activities"]'),  # noqa: E501
         'line_labels': datepoints,
         'line_data': data,
         'feeds': feeds,
@@ -89,10 +87,10 @@ def settings(request):
         if form.is_valid():
             user.first_name = form.cleaned_data.get('first_name')
             user.last_name = form.cleaned_data.get('last_name')
-            user.profile.job_title = form.cleaned_data.get('job_title')
+            # user.profile.job_title = form.cleaned_data.get('job_title')
             user.email = form.cleaned_data.get('email')
-            user.profile.url = form.cleaned_data.get('url')
-            user.profile.location = form.cleaned_data.get('location')
+            user.url = form.cleaned_data.get('url')
+            user.location = form.cleaned_data.get('location')
             user.save()
             messages.add_message(request,
                                  messages.SUCCESS,
@@ -100,9 +98,9 @@ def settings(request):
 
     else:
         form = ProfileForm(instance=user, initial={
-            'job_title': user.profile.job_title,
-            'url': user.profile.url,
-            'location': user.profile.location
+            # 'job_title': user.profile.job_title,
+            'url': user.url,
+            'location': user.location
             })
 
     return render(request, 'core/settings.html', {'form': form})
@@ -161,7 +159,7 @@ def upload_picture(request):
             new_size = new_width, new_height
             im.thumbnail(new_size, Image.ANTIALIAS)
             im.save(filename)
-
+        print("SAVED to: ", profile_pictures + request.user.username + "_tmp.jpg")
         return redirect('/settings/picture/?upload_picture=uploaded')
 
     except Exception as e:
@@ -186,6 +184,7 @@ def save_uploaded_picture(request):
         os.remove(tmp_filename)
 
     except Exception:
+        print("GPT EXCEPTION")
         pass
 
     return redirect('/settings/picture/')

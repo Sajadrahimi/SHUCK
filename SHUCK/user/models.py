@@ -37,7 +37,7 @@ class Profile(AbstractUser) :
     Reads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Read")
     toReads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "toRead")
     Readings = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Reading")
-    # token = models.OneToOneField(Token, null = True)
+    url = models.CharField(max_length=50, null=True, blank=True)
 
     def get_url(self):
         url = self.url
@@ -46,14 +46,15 @@ class Profile(AbstractUser) :
 
         return url
 
-    def get_picture(self):
+    def get_avatar(self):
         no_picture = 'http://trybootcamp.vitorfs.com/static/img/user.png'
         try:
             filename = settings.MEDIA_ROOT + '/profile_pictures/' +\
-                self.user.username + '.jpg'
+                self.username + '_avatar.jpg'
             picture_url = settings.MEDIA_URL + 'profile_pictures/' +\
-                self.user.username + '.jpg'
+                self.username + '.jpg'
             if os.path.isfile(filename):  # pragma: no cover
+                print("IS FILE")
                 return picture_url
             else:  # pragma: no cover
                 gravatar_url = 'http://www.gravatar.com/avatar/{0}?{1}'.format(

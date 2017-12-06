@@ -3,7 +3,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.feeds, name='feeds'),
+    url(r'^feeds/$', views.feeds, name='feeds'),
     url(r'^post/$', views.post, name='post'),
     url(r'^like/$', views.like, name='like'),
     url(r'^comment/$', views.comment, name='comment'),

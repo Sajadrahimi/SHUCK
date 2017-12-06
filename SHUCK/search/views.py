@@ -21,7 +21,7 @@ def search(request):
 
         try:
             search_type = request.GET.get('type')
-            if search_type not in ['feed', 'articles', 'users']:
+            if search_type not in ['feed', 'users']:
                 search_type = 'feed'
 
         except Exception:
@@ -31,15 +31,15 @@ def search(request):
         results = {}
         results['feed'] = Feed.objects.filter(post__icontains=querystring,
                                               parent=None)
-        results['articles'] = Article.objects.filter(
-            Q(title__icontains=querystring) | Q(
-                content__icontains=querystring), status='P')
+        # results['articles'] = Article.objects.filter(
+        #     Q(title__icontains=querystring) | Q(
+        #         content__icontains=querystring), status='P')
         results['users'] = Profile.objects.filter(
             Q(username__icontains=querystring) | Q(
                 first_name__icontains=querystring) | Q(
                     last_name__icontains=querystring))
         count['feed'] = results['feed'].count()
-        count['articles'] = results['articles'].count()
+        # count['articles'] = results['articles'].count()
         count['users'] = results['users'].count()
 
         return render(request, 'search/results.html', {
@@ -65,14 +65,14 @@ def get_autocomplete_suggestions(request):
         Q(username__icontains=querystring) | Q(
             first_name__icontains=querystring) | Q(
                 last_name__icontains=querystring)))
-    articles = list(
-        Article.objects.filter(Q(title__icontains=querystring) | Q(
-            content__icontains=querystring), status='P'))
+    # articles = list(
+    #     Article.objects.filter(Q(title__icontains=querystring) | Q(
+    #         content__icontains=querystring), status='P'))
 
     # Add all the retrieved users, articles to data_retrieved
     # list.
     data_retrieved = users
-    data_retrieved.extend(articles)
+    # data_retrieved.extend(articles)
     results = []
     for data in data_retrieved:
         data_json = {}

@@ -159,5 +159,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = PROJECT_DIR.parent.child('staticfiles')
 STATIC_URL = '/static/'
-LOGIN_URL = '/user/'
+
+STATICFILES_DIRS = (
+    PROJECT_DIR.child('static'),
+)
+
+MEDIA_ROOT = PROJECT_DIR.parent.child('media')
+MEDIA_URL = '/media/'
+
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/feeds/feeds/'
