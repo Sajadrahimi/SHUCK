@@ -23,7 +23,7 @@ from PIL import Image
 
 def home(request):
     print("IN HOME")
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         return feeds(request)
     else:
         return render(request, 'core/cover.html')
@@ -55,23 +55,19 @@ def profile(request, username):
     paginator = Paginator(all_feeds, FEEDS_NUM_PAGES)
     feeds = paginator.page(1)
     from_feed = -1
+    # profile = Profile.objects.filter(username = username)[0]
+
     if feeds:  # pragma: no cover
         from_feed = feeds[0].id
 
     feeds_count = Feed.objects.filter(user=page_user).count()
-    # article_count = Article.objects.filter(create_user=page_user).count()
-    # article_comment_count = ArticleComment.objects.filter(
-    #     user=page_user).count()
-    activity_count = Activity.objects.filter(user=page_user).count()
-    messages_count = Message.objects.filter(
-        Q(from_user=page_user) | Q(user=page_user)).count()
-    data, datepoints = Activity.daily_activity(page_user)
+    # read_count = profile.Reads
+    # print("READS: ", read_count)
+
     data = {
         'page_user': page_user,
         'feeds_count': feeds_count,
         'bar_labels': json.dumps('["Feeds", "Comments", "Questions", "Activities"]'),  # noqa: E501
-        'line_labels': datepoints,
-        'line_data': data,
         'feeds': feeds,
         'from_feed': from_feed,
         'page': 1
@@ -188,3 +184,6 @@ def save_uploaded_picture(request):
         pass
 
     return redirect('/settings/picture/')
+
+def handle_404(request):
+    render(request, {'template' : 'core/404.html'})

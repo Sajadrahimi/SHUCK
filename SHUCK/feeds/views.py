@@ -10,10 +10,11 @@ from django.template.loader import render_to_string
 
 from activities.models import Activity
 
+from user.models import Profile
 from .decorators import ajax_required
 from feeds.models import Feed
 
-FEEDS_NUM_PAGES = 10
+FEEDS_NUM_PAGES = 1000
 
 
 @login_required
@@ -128,17 +129,19 @@ def post(request):
 def like(request):
     feed_id = request.POST['feed']
     feed = Feed.objects.get(pk=feed_id)
-    user = request.user
+    user = Profile.objects.get(username = request.user)
+    print("*********** USER: ", user)
     like = Activity.objects.filter(activity_type=Activity.LIKE, feed=feed_id,
                                    user=user)
     if like:
-        user.profile.unotify_liked(feed)
+        print("@@@@@@@@@ LIKED")
+        user.unotify_liked(feed)
         like.delete()
 
     else:
         like = Activity(activity_type=Activity.LIKE, feed=feed_id, user=user)
         like.save()
-        user.profile.notify_liked(feed)
+        user.notify_liked(feed)
 
     return HttpResponse(feed.calculate_likes())
 
@@ -155,8 +158,8 @@ def comment(request):
             post = post[:255]
             user = request.user
             feed.comment(user=user, post=post)
-            user.profile.notify_commented(feed)
-            user.profile.notify_also_commented(feed)
+            user.notify_commented(feed)
+            user.notify_also_commented(feed)
         return render(request, 'feeds/partial_feed_comments.html',
                       {'feed': feed})
 

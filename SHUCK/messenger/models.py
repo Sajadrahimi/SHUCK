@@ -52,8 +52,7 @@ class Message(models.Model):
                 'user': Profile.objects.get(pk=conversation['conversation']),
                 'last': conversation['last'],
                 'unread': Message.objects.filter(user=user,
-                                                 conversation__pk=conversation[
-                                                    'conversation'],
+                                                 conversation__pk=conversation['conversation'],
                                                  is_read=False).count(),
                 })
 
