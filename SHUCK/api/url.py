@@ -1,29 +1,33 @@
 from django.conf.urls import url
 from . import views
 
-book_list = views.BookViewSet.as_view({
+ListAllBooks = views.BookViewSetByPrimaryKey.as_view({
     'get' : 'list',
     # 'post' : 'create'
         })
-book_detail = views.BookViewSet.as_view({
-    'get' : 'retrieve',
-    # 'put' : 'update',
-    # 'patch' : 'partial_update',
-    # 'delete' : 'destroy'
-        })
-user_list = views.UserViewSet.as_view({
-    'get' : 'list'
-})
-user_detail = views.UserViewSet.as_view({
+BookDetailsByPrimaryKey = views.BookViewSetByPrimaryKey.as_view({
     'get' : 'retrieve',
     # 'post' : 'create'
+        })
+BookDetailsByBookName = views.BookViewSetByBookName.as_view({
+    'get' : 'retrieve',
+        })
+BookDetailsByBookAuthor = views.BookViewSetByBookAuthor.as_view({
+    'get' : 'retrieve',
+        })
+BookDetailsByBookPublisher = views.BookViewSetByBookPublisher.as_view({
+    'get' : 'retrieve',
+        })
+UserDetailsByName = views.UserViewSetByName.as_view({
+    'get' : 'get'
 })
-djangoUser_list = views.DjangoUserViewSet.as_view({
-    'get' : 'list'
-})
+
+
 urlpatterns = [
-    url(r'^getAllBooks/$', book_list),
-    url(r'^getBook/(?P<pk>[0-9]+)$', book_detail),
-    url(r'^getAllUsers/$', user_list),
-    url(r'^getUser/(?P<pk>[0-9]+)$', user_detail)
+    url(r'^getAllBooks/$', ListAllBooks),
+    url(r'^getBook/(?P<pk>[0-9]+)$', BookDetailsByPrimaryKey),
+    url(r'^getBook/ByName/(?P<BookName>\w+)$', BookDetailsByBookName),
+    url(r'^getBook/ByAuthor/(?P<BookAuthor>\w+)$', BookDetailsByBookAuthor),
+    url(r'^getBook/ByPublisher/(?P<BookPublisher>\w+)$', BookDetailsByBookPublisher),
+    url(r'^getUser/(?P<pk>[0-9]+)$', UserDetailsByName)
     ]

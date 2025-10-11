@@ -26,7 +26,7 @@ class Author(models.Model) :
 
 class Publisher(models.Model) :
     PublisherName = models.CharField(max_length = 50, blank = False)
-
+    PublisherBooks =
 
     def getPublisherBooks(self) :
         return Book.objects.get(BookTranslator = self)
