@@ -67,47 +67,44 @@ class Comment(models.Model) :
 
 class Book(models.Model) :
     BookName = models.CharField(max_length = 50, null = False, blank = False)
-    # BookPublisher = models.ManyToOneRel(to = 'Publisher', field = 'BookPublisher',
-    #                                     field_name = 'BookPublisher')
-    # BookAuthor = models.ManyToOneRel(to = 'Author', field = 'BookAuthor',
-    #                                  field_name = 'BookAuthor')
-    BookPublisher = models.ForeignKey('Publisher', null = True)
-    BookAuthor = models.ForeignKey('Author', null = True)
-    BookTranslator = models.ForeignKey('Translator', blank = True, null = True)
+    # BookPublisher = models.ForeignKey('Publisher', null = True)
+    # BookAuthor = models.ForeignKey('Author', null = True)
+    # BookTranslator = models.ForeignKey('Translator', blank = True, null = True)
     BookDateOfPublish = models.DateField(null = True, blank = True)
     BookImage = models.ImageField(null = True, blank = True)
     BookSummary = models.TextField(blank = True, max_length = 1000)
-    # BookRatesCount = models.IntegerField(default = 0, blank = True)
-    # BookRatesSum = models.IntegerField(default = 0, blank = True)
-    # BookComments = models.ForeignKey('Book.Comment', null = True, blank = True)
-
-    def __init__(self, *args, **kwargs) :
-        super(Book, self).__init__(*args, **kwargs)
-        self.OldBookPublisher = self.BookPublisher
-        self.OldBookAuthor = self.BookAuthor
-
-    def save(self, **kwargs) :
-
-        if self.OldBookPublisher != self.BookPublisher and self.OldBookPublisher is not None :
-            print("PUBLISHER CHANGED", "OLD PUB: ", self.OldBookPublisher.PublisherName)
-            Publisher.objects.get(PublisherName = \
-            self.OldBookPublisher.PublisherName).ChangePublisherBook(self)
-        super(Book, self).save(**kwargs)
+    BookRatesCount = models.IntegerField(default = 0, blank = True, editable = False)
+    BookRatesSum = models.IntegerField(default = 0, blank = True, editable = False)
+    BookComments = models.ForeignKey('Book.Comment', null = True, blank = True, editable = False)
+    #
+    # def __init__(self, *args, **kwargs) :
+    #     super(Book, self).__init__(*args, **kwargs)
+    #     self.OldBookPublisher = self.BookPublisher
+    #     self.OldBookAuthor = self.BookAuthor
+    #
+    # def save(self, **kwargs) :
+    #
+    #     if self.OldBookPublisher != self.BookPublisher and self.OldBookPublisher is not None :
+    #         print("PUBLISHER CHANGED", "OLD PUB: ", self.OldBookPublisher.PublisherName)
+    #         Publisher.objects.get(PublisherName = \
+    #         self.OldBookPublisher.PublisherName).ChangePublisherBook(self)
+    #     super(Book, self).save(**kwargs)
 
     def __str__(self) :
         return self.BookName
 
 class Publisher(models.Model) :
     PublisherName = models.CharField(max_length = 50, blank = False)
-    PublisherBooks = models.ForeignKey('Book', related_name = 'PublisherBooks', null = True, default = '')
+    PublisherBooks = models.ForeignKey('Book', related_name = 'PublisherBooks',
+                                       null = True, default = '', on_delete = models.CASCADE)
 
     def getPublisherBooks(self) :
         return Book.objects.get(BookTranslator = self)
 
-    def ChangePublisherBook(self, Book):
-        print("CHANGE PUBLISHER CALLED", "BOOK: ", Book)
-        self.PublisherBooks = Book
-        super(Publisher, self).save()
+    # def ChangePublisherBook(self, Book):
+    #     print("CHANGE PUBLISHER CALLED", "BOOK: ", Book)
+    #     self.PublisherBooks = Book
+    #     super(Publisher, self).save()
 
     def __str__(self) :
         return self.PublisherName
