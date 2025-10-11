@@ -27,9 +27,6 @@ Register = views.UserViewSetByUserName.as_view({
     'post' : 'create'
 })
 
-# Auth = views.UserLogin.as_view({
-#     'post' : 'retrieve'
-# })
 Auth = views.UserLoginByToken.as_view({
     'get' : 'retrieve'
 })
