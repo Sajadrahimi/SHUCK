@@ -1,5 +1,6 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
+from rest_framework import authentication
 
 ListAllBooks = views.BookViewSetByPrimaryKey.as_view({
     'get' : 'list',
@@ -22,10 +23,16 @@ UserDetailsByPrimaryKey = views.UserViewSetByPrimaryKey.as_view({
     'get' : 'retrieve',
     'post' : 'update',
 })
-UserDetailsByUserName = views.UserViewSetByUserName.as_view({
+Register = views.UserViewSetByUserName.as_view({
     'post' : 'create'
 })
 
+# Auth = views.UserLogin.as_view({
+#     'post' : 'retrieve'
+# })
+Auth = views.UserLoginByToken.as_view({
+    'get' : 'retrieve'
+})
 urlpatterns = [
     url(r'^getAllBooks/$', ListAllBooks),
     url(r'^getBook/(?P<pk>[0-9]+)$', BookDetailsByPrimaryKey),
@@ -33,5 +40,6 @@ urlpatterns = [
     url(r'^getBook/ByAuthor/(?P<AuthorName>\w+)$', BookDetailsByBookAuthor),
     url(r'^getBook/ByPublisher/(?P<PublisherName>\w+)$', BookDetailsByBookPublisher),
     url(r'^getProfile/(?P<pk>[0-9]+)$', UserDetailsByPrimaryKey),
-    url(r'^register/(?P<username>\w+)$', UserDetailsByUserName)
+    url(r'^register/$', Register),
+    url(r'^auth/(?P<key>\w+)$', Auth)
     ]

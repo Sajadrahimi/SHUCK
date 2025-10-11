@@ -1,6 +1,9 @@
+import json
+from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from django.contrib.auth import authenticate
 from Book.models import Publisher, Book, Author, Translator
+from rest_framework.authtoken.models import Token
 from user.models import Profile
 
 
@@ -184,8 +187,8 @@ class PrimaryBookSerializer(serializers.ModelSerializer) :
                   'BookSummary', 'BookPageCount', 'BookImage', 'BookDateOfPublish']
 
 class UserSignUpSerializer(serializers.ModelSerializer):
+
     def validate(self, attrs) :
-        print("************", attrs)
         username = attrs['username']
         email = attrs['email']
 
@@ -225,13 +228,42 @@ class UserSignUpSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ['username', 'password', 'email', 'first_name',
                   'last_name', 'location', 'phone_number', 'bio',
-                  'birth_date', 'avatar']
+                  'birth_date', 'avatar', 'id', 'token']
+
+class UserLoginSerializer(serializers.ModelSerializer):
+    def validate(self, attrs):
+        username = attrs['username']
+        password = attrs['password']
+        if Profile.objects.filter(username = username).count() == 0:
+            raise serializers.ValidationError({
+                "message" : "wrong username"
+            })
+
+        else:
+            u = Profile.objects.get(username = username)
+            if u.password != password:
+                raise serializers.ValidationError({
+                    "message" : "wrong password"
+                })
+        return attrs
+    def retrieve(self, validated_data):
+        return Profile.objects.get(username = validated_data['username'],
+                                   password = validated_data['password'])
+
+    class Meta():
+        model = Profile
+        fields = '__all__'
+
 
 # @login_required
 class UserSerializer(serializers.ModelSerializer) :
     Reads = PrimaryBookSerializer(many = True)
     toReads = PrimaryBookSerializer(many = True)
     Readings = PrimaryBookSerializer(many = True)
+    token = serializers.SerializerMethodField('getToken')
+
+    def getToken(self, user):
+        return Token.objects.filter(user = user).values("key")
 
     def update(self, instance, validated_data):
         if instance.username != validated_data.get('username', instance.username):
@@ -257,4 +289,17 @@ class UserSerializer(serializers.ModelSerializer) :
         model = Profile
         fields = ['id', 'username', 'email', 'first_name', 'last_name', 'last_login',
                   'location', 'phone_number', 'bio', 'birth_date', 'is_staff', 'is_active',
-                  'avatar', 'groups', 'Reads', 'toReads', 'Readings']
+                  'avatar', 'groups', 'Reads', 'toReads', 'Readings', 'token']
+
+class TokenSerializer(serializers.ModelSerializer):
+    user = UserSerializer(serializers.SerializerMethodField('getUser'))
+    # k = UserSerializer(Profile.objects.get(user = Token.objects.filter(key = token).values('user')))
+    def getUser(self, token):
+        # print("TOOOKEN: ", token)
+        t = Token.objects.filter(key = token).values("user")
+        return Profile.objects.get(user = t)
+
+    class Meta():
+        model = Token
+        # fields = ['user']
+        fields = ['user']

@@ -1,6 +1,10 @@
 import hashlib
+import os
 import urllib
 
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
@@ -33,6 +37,7 @@ class Profile(AbstractUser) :
     Reads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Read")
     toReads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "toRead")
     Readings = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Reading")
+    token = models.ForeignKey(Token, null = True)
 
     def get_url(self):
         url = self.url
@@ -59,6 +64,11 @@ class Profile(AbstractUser) :
 
         except Exception:
             return no_picture
+
+    @receiver(post_save, sender = settings.AUTH_USER_MODEL)
+    def create_auth_token(sender, instance = None, created = False, **kwargs) :
+        if created :
+            Token.objects.create(user = instance)
 
     def __str__(self) :
         return str(self.username)

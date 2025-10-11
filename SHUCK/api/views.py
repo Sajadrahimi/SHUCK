@@ -1,10 +1,9 @@
-from django.shortcuts import render
+from rest_framework.authtoken.models import Token
 from .serializers import BookSerializer, UserSerializer,\
-    PublisherSerializer, AuthorSerializer, UserSignUpSerializer
+    PublisherSerializer, AuthorSerializer, UserSignUpSerializer, TokenSerializer
 from rest_framework import viewsets
 from Book.models import Book, Publisher, Author
 from user.models import Profile
-from django.contrib.auth.models import User as DjangoUser
 
 class BookViewSetByPrimaryKey(viewsets.ModelViewSet):
     queryset = Book.objects.all()
@@ -37,3 +36,9 @@ class UserViewSetByUserName(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = UserSignUpSerializer
     lookup_field = 'username'
+
+
+class UserLoginByToken(viewsets.ModelViewSet):
+    queryset = Token.objects.all()
+    serializer_class = TokenSerializer
+    lookup_field = 'key'
