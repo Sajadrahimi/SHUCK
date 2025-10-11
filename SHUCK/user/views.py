@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login as DjangoLogin, logout
+from django.contrib.auth import authenticate, login as DjangoLogin
 from django.http import request, HttpResponse
-from .models import User
+from .models import User, Shelf
 from .forms import SignUpForm
 from django.template import loader
 
@@ -24,16 +24,19 @@ def login(request) :
 
 def registration(request):
     if request.method == 'POST':
+        print("is POST")
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password1")
             first_name = form.cleaned_data.get("first_name")
             last_name = form.cleaned_data.get("last_name")
+            print(username, password, first_name, last_name)
             user = authenticate(request, username = username, password = password,
                                 first_name = first_name, last_name = last_name)
+            print("************", user)
             u = User.objects.create(django_user = user)
+            u.createShelves()
             u.save()
             return HttpResponse("Hello " + user.username)
 
@@ -45,7 +48,6 @@ def loign_form(request) :
     return HttpResponse(template.render({}, request))
 
 def registration_form(request):
-    print("_----------------REGISTRATION FORM ______________")
     if request.method == 'GET':
         form = SignUpForm()
         return render(request, 'user/registration_form.html', {'form' : form})

@@ -22,22 +22,21 @@ class User(models.Model) :
     user_type = models.CharField(max_length = 2,
                                  choices = types,
                                  default = 'U')
-    # books = models.ForeignKey('Book.Book')
-
-    # @receiver(post_save, sender = DjangoUser)
-    # def create_user_profile(sender, instance, created, **kwargs) :
-    #     if created :
-    #         User.objects.create(user = instance)
-    #
-    # @receiver(post_save, sender = DjangoUser)
-    # def create_user_profile(sender, instance, created, **kwargs) :
-    #     if created :
-    #         User.objects.create(user = instance)
-
-    def save(self, **kwargs):
-        super(User, self).save(**kwargs)
+    shelves = models.ForeignKey('Shelf', null = True, blank = True)
 
     def __str__(self) :
         return str(self.django_user)
 
+    def createShelves(self):
+        if self is not None:
+            self.shelves.objects.create(name = 'Read')
+            self.shelves.objects.create(shelf_name = 'Reading')
+            self.shelves.objects.create(shelf_name = 'to Read')
 
+
+class Shelf(models.Model):
+    shelf_name = models.CharField(max_length = 30, null = False)
+    shelf_books = models.ForeignKey('Book.Book')
+    # user = models.ForeignKey(User)
+    def __str__(self):
+        return self.shelf_name
