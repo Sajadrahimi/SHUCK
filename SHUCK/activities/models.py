@@ -4,7 +4,7 @@ import json
 from django.db.models.functions import TruncMonth, TruncDay
 from django.db.models import Count
 
-from django.contrib.auth.models import User
+from user.models import Profile
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.html import escape
@@ -23,7 +23,7 @@ class Activity(models.Model):
         (DOWN_VOTE, 'Down Vote'),
         )
 
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(Profile)
     activity_type = models.CharField(max_length=1, choices=ACTIVITY_TYPES)
     date = models.DateTimeField(auto_now_add=True)
     feed = models.IntegerField(null=True, blank=True)
@@ -99,7 +99,6 @@ class Notification(models.Model):
         (FAVORITED, 'Favorited'),
         (ANSWERED, 'Answered'),
         (ACCEPTED_ANSWER, 'Accepted Answer'),
-        (EDITED_ARTICLE, 'Edited Article'),
         (ALSO_COMMENTED, 'Also Commented'),
         )
 
@@ -107,11 +106,10 @@ class Notification(models.Model):
     _COMMENTED_TEMPLATE = '<a href="/{0}/">{1}</a> commented on your post: <a href="/feeds/{2}/">{3}</a>'  # noqa: E501
     _EDITED_ARTICLE_TEMPLATE = '<a href="/{0}/">{1}</a> edited your article: <a href="/article/{2}/">{3}</a>'  # noqa: E501
 
-    from_user = models.ForeignKey(User, related_name='+')
-    to_user = models.ForeignKey(User, related_name='+')
+    from_user = models.ForeignKey(Profile, related_name='+')
+    to_user = models.ForeignKey(Profile, related_name='+')
     date = models.DateTimeField(auto_now_add=True)
     feed = models.ForeignKey('feeds.Feed', null=True, blank=True)
-    article = models.ForeignKey('articles.Article', null=True, blank=True)
     notification_type = models.CharField(max_length=1,
                                          choices=NOTIFICATION_TYPES)
     is_read = models.BooleanField(default=False)

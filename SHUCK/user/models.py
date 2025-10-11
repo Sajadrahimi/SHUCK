@@ -1,3 +1,7 @@
+import hashlib
+import urllib
+
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -13,7 +17,7 @@ class Shelf(models.Model):
     def getReadShelf():
         return Shelf.objects.create(shelf_name = 'Read')
 
-class User(AbstractUser) :
+class Profile(AbstractUser) :
     birth_date = models.DateField(null = True, blank = True)
     bio = models.TextField(max_length = 500, blank = True, null = True)
     location = models.CharField(max_length = 30, blank = True, null = True)
@@ -29,6 +33,32 @@ class User(AbstractUser) :
     Reads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Read")
     toReads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "toRead")
     Readings = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Reading")
+
+    def get_url(self):
+        url = self.url
+        if "http://" not in self.url and "https://" not in self.url and len(self.url) > 0:  # noqa: E501
+            url = "http://" + str(self.url)
+
+        return url
+
+    def get_picture(self):
+        no_picture = 'http://trybootcamp.vitorfs.com/static/img/user.png'
+        try:
+            filename = settings.MEDIA_ROOT + '/profile_pictures/' +\
+                self.user.username + '.jpg'
+            picture_url = settings.MEDIA_URL + 'profile_pictures/' +\
+                self.user.username + '.jpg'
+            if os.path.isfile(filename):  # pragma: no cover
+                return picture_url
+            else:  # pragma: no cover
+                gravatar_url = 'http://www.gravatar.com/avatar/{0}?{1}'.format(
+                    hashlib.md5(self.user.email.lower()).hexdigest(),
+                    urllib.urlencode({'d': no_picture, 's': '256'})
+                    )
+                return gravatar_url
+
+        except Exception:
+            return no_picture
 
     def __str__(self) :
         return str(self.username)

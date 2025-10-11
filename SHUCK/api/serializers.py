@@ -1,12 +1,12 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
 from Book.models import Publisher, Book, Author, Translator
-from user.models import User
+from user.models import Profile
 
 
 class PrimaryUserSerializer(serializers.ModelSerializer) :
     class Meta :
-        model = User
+        model = Profile
         fields = ['id', 'username', 'email', 'first_name', 'last_name', 'avatar']
 
 
@@ -68,7 +68,7 @@ class BookSerializer(serializers.ModelSerializer) :
     UsersReadThisBook = serializers.SerializerMethodField('getReads')
 
     def getReads(self, Book) :
-        return User.objects.filter(Reads = Book).values('id', 'username', 'avatar')
+        return Profile.objects.filter(Reads = Book).values('id', 'username', 'avatar')
 
     def validate(self, attrs) :
         publisher = Publisher.objects.filter(PublisherName = attrs['BookPublisher']['PublisherName']).first()
@@ -189,11 +189,11 @@ class UserSignUpSerializer(serializers.ModelSerializer):
         username = attrs['username']
         email = attrs['email']
 
-        if User.objects.filter(username = username).count() != 0 :
+        if Profile.objects.filter(username = username).count() != 0 :
             raise serializers.ValidationError({
                 "message" : "username is taken."
             })
-        elif User.objects.filter(email = email).count() != 0 :
+        elif Profile.objects.filter(email = email).count() != 0 :
             raise serializers.ValidationError({
                 "message" : "email is taken"
             })
@@ -211,7 +211,7 @@ class UserSignUpSerializer(serializers.ModelSerializer):
         bio = validated_data['bio']
         birth_date = validated_data['birth_date']
         avatar = validated_data['avatar']
-        u = User.objects.create(
+        u = Profile.objects.create(
             username = username, password = password,
             email = email, first_name = first_name ,
             last_name = last_name, location = location,
@@ -222,7 +222,7 @@ class UserSignUpSerializer(serializers.ModelSerializer):
         return u
 
     class Meta:
-        model = User
+        model = Profile
         fields = ['username', 'password', 'email', 'first_name',
                   'last_name', 'location', 'phone_number', 'bio',
                   'birth_date', 'avatar']
@@ -254,7 +254,7 @@ class UserSerializer(serializers.ModelSerializer) :
         return instance
 
     class Meta :
-        model = User
+        model = Profile
         fields = ['id', 'username', 'email', 'first_name', 'last_name', 'last_login',
                   'location', 'phone_number', 'bio', 'birth_date', 'is_staff', 'is_active',
                   'avatar', 'groups', 'Reads', 'toReads', 'Readings']

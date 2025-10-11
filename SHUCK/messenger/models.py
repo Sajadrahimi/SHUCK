@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from django.contrib.auth.models import User
+from user.models import Profile
 from django.db import models
 from django.db.models import Max
 from django.utils.encoding import python_2_unicode_compatible
@@ -9,11 +9,11 @@ from django.utils.translation import ugettext_lazy as _
 
 @python_2_unicode_compatible
 class Message(models.Model):
-    user = models.ForeignKey(User, related_name='+')
+    user = models.ForeignKey(Profile, related_name='+')
     message = models.TextField(max_length=1000, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    conversation = models.ForeignKey(User, related_name='+')
-    from_user = models.ForeignKey(User, related_name='+')
+    conversation = models.ForeignKey(Profile, related_name='+')
+    from_user = models.ForeignKey(Profile, related_name='+')
     is_read = models.BooleanField(default=False)
 
     class Meta:
@@ -49,7 +49,7 @@ class Message(models.Model):
         users = []
         for conversation in conversations:
             users.append({
-                'user': User.objects.get(pk=conversation['conversation']),
+                'user': Profile.objects.get(pk=conversation['conversation']),
                 'last': conversation['last'],
                 'unread': Message.objects.filter(user=user,
                                                  conversation__pk=conversation[

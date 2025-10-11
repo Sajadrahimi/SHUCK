@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as DjangoLogin
 from django.http import request, HttpResponse
-from .models import User, Shelf
+from .models import Profile, Shelf
 from .forms import SignUpForm
 from django.template import loader
 
@@ -13,19 +13,20 @@ def login(request) :
     password = request.POST["password"]
     user = authenticate(request, username = username, password = password)
 
-    if user is not None and request.POST["g-recaptcha-response"] != '':
+    # if user is not None and request.POST["g-recaptcha-response"] != '':
+    if user is not None:
         print("VERIFIED")
         DjangoLogin(request, user)
         return HttpResponse("Logged in")
-    elif request.POST["g-recaptcha-response"] == '':
-        return HttpResponse("You Bastard ROBOT")
+    # elif request.POST["g-recaptcha-response"] == '':
+    #     return HttpResponse("You Bastard ROBOT")
     else :
         return HttpResponse("Wrong Username or Password")
 
 
 def printer(request):
     print("**********************")
-    return HttpResponse(User.objects.filter(username = 'test').values('Reads'))
+    return HttpResponse(Profile.objects.filter(username = 'test').values('Reads'))
 
 def registration(request):
     if request.method == 'POST':
@@ -38,7 +39,7 @@ def registration(request):
             last_name = form.cleaned_data.get("last_name")
             email = form.cleaned_data.get("email")
             print(username, password, first_name, last_name)
-            u = User.objects.create(username = username, password = password, email = email,
+            u = Profile.objects.create(username = username, password = password, email = email,
                                     first_name = first_name, last_name = last_name)
             u.save()
             # u.shelves.objects.create(shelf_name = 'Read')

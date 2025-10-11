@@ -6,7 +6,7 @@ urlpatterns = [
     url(r'^register/$', views.registration_form, name = "Registration Form"),
     url(r'^register/submit_registration/$', views.registration, name = "Registration"),
     url(r'^print/$', views.printer, name = 'Printer'),
-    # url(r'^', views.loign_form, name = "Login Form"),
+    url(r'^', views.loign_form, name = "Login Form"),
 
 
 ]
