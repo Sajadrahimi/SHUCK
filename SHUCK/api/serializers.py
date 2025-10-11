@@ -8,7 +8,7 @@ class PrimaryPublisherSerializer(serializers.ModelSerializer) :
 
     class Meta :
         model = Publisher
-        fields = ['id', 'PublisherName', 'PublisherBooks']
+        fields = ['id', 'PublisherName']
 
 
 class PrimaryAuthorSerializer(serializers.ModelSerializer) :
@@ -32,22 +32,21 @@ class PrimaryBookSerializer(serializers.ModelSerializer) :
     class Meta :
         model = Book
         fields = ['id', 'BookName', 'BookSummary',  'BookImage']
-                  # 'BookAuthor', 'BookTranslator', 'BookImage']
+                  # 'BookAuthor', 'BookTranslator']
 class BookSerializer(serializers.ModelSerializer) :
     # BookAuthor = PrimaryAuthorSerializer()
     # BookTranslator = TranslatorSerializer()
-    BookPublisher = serializers.SerializerMethodField('getPublisher')
-
-    def getPublisher(self, Book) :
-        return Publisher.objects.filter(PublisherBooks = Book).values('PublisherName', 'id')
-
+    BookPublisher = PrimaryPublisherSerializer()
     class Meta :
         model = Book
         fields = ['id', 'BookName', 'BookSummary', 'BookPublisher', 'BookImage']
                   # 'BookAuthor', 'BookTranslator']
 
+
 class PublisherSerializer(serializers.ModelSerializer) :
-    PublisherBooks = PrimaryBookSerializer()
+    PublisherBooks = serializers.SerializerMethodField('getBooks')
+    def getBooks(self, Publisher):
+            return Book.objects.filter(BookPublisher = Publisher).values('BookName', 'id')
     class Meta :
         model = Publisher
         fields = ['id', 'PublisherName', 'PublisherBooks']

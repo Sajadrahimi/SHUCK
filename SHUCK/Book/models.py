@@ -67,7 +67,7 @@ class Comment(models.Model) :
 
 class Book(models.Model) :
     BookName = models.CharField(max_length = 50, null = False, blank = False)
-    # BookPublisher = models.ForeignKey('Publisher', null = True)
+    BookPublisher = models.ForeignKey('Publisher', null = True)
     # BookAuthor = models.ForeignKey('Author', null = True)
     # BookTranslator = models.ForeignKey('Translator', blank = True, null = True)
     BookDateOfPublish = models.DateField(null = True, blank = True)
@@ -95,16 +95,9 @@ class Book(models.Model) :
 
 class Publisher(models.Model) :
     PublisherName = models.CharField(max_length = 50, blank = False)
-    PublisherBooks = models.ForeignKey('Book', related_name = 'PublisherBooks',
-                                       null = True, default = '', on_delete = models.CASCADE)
 
     def getPublisherBooks(self) :
         return Book.objects.get(BookTranslator = self)
-
-    # def ChangePublisherBook(self, Book):
-    #     print("CHANGE PUBLISHER CALLED", "BOOK: ", Book)
-    #     self.PublisherBooks = Book
-    #     super(Publisher, self).save()
 
     def __str__(self) :
         return self.PublisherName
