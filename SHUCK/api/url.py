@@ -8,7 +8,6 @@ ListAllBooks = views.BookViewSetByPrimaryKey.as_view({
 BookDetailsByPrimaryKey = views.BookViewSetByPrimaryKey.as_view({
     'get' : 'retrieve',
     'post' : 'create',
-    # 'put' : 'update',
         })
 BookDetailsByBookName = views.BookViewSetByBookName.as_view({
     'get' : 'retrieve',
@@ -19,10 +18,13 @@ BookDetailsByBookAuthor = views.BookViewSetByBookAuthor.as_view({
 BookDetailsByBookPublisher = views.BookViewSetByBookPublisher.as_view({
     'get' : 'retrieve',
         })
-UserDetailsByName = views.UserViewSetByName.as_view({
-    'get' : 'get'
+UserDetailsByPrimaryKey = views.UserViewSetByPrimaryKey.as_view({
+    'get' : 'retrieve',
+    'put' : 'update',
 })
-
+UserDetailsByUserName = views.UserViewSetByUserName.as_view({
+    'post' : 'create'
+})
 
 urlpatterns = [
     url(r'^getAllBooks/$', ListAllBooks),
@@ -30,5 +32,6 @@ urlpatterns = [
     url(r'^getBook/ByName/(?P<BookName>\w+)$', BookDetailsByBookName),
     url(r'^getBook/ByAuthor/(?P<AuthorName>\w+)$', BookDetailsByBookAuthor),
     url(r'^getBook/ByPublisher/(?P<PublisherName>\w+)$', BookDetailsByBookPublisher),
-    url(r'^getUser/(?P<pk>[0-9]+)$', UserDetailsByName)
+    url(r'^getUser/(?P<pk>[0-9]+)$', UserDetailsByPrimaryKey),
+    url(r'^register/(?P<username>\w+)$', UserDetailsByUserName)
     ]
