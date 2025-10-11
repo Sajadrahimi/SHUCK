@@ -37,7 +37,7 @@ class Profile(AbstractUser) :
     Reads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Read")
     toReads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "toRead")
     Readings = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Reading")
-    token = models.ForeignKey(Token, null = True)
+    token = models.OneToOneField(Token, null = True)
 
     def get_url(self):
         url = self.url

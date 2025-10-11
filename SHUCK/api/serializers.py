@@ -305,14 +305,14 @@ class UserSerializer(serializers.ModelSerializer) :
                   'avatar', 'groups', 'Reads', 'toReads', 'Readings', 'token']
 
 class TokenSerializer(serializers.ModelSerializer):
-    user = UserSerializer(serializers.SerializerMethodField('getUser'))
+    # user = UserSerializer(serializers.SerializerMethodField('getUser'))
     # k = UserSerializer(Profile.objects.get(user = Token.objects.filter(key = token).values('user')))
-    def getUser(self, token):
-        # print("TOOOKEN: ", token)
-        t = Token.objects.filter(key = token).values("user")
-        return Profile.objects.get(user = t)
+    # def getUser(self, token):
+    #     print("TOOOKEN: ", token)
+        # t = Token.objects.filter(key = token).values("user")
+        # return Profile.objects.get(user = t)
 
     class Meta():
         model = Token
         # fields = ['user']
-        fields = ['user']
+        fields = '__all__'

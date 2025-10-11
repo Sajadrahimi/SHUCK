@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
@@ -58,10 +59,16 @@ class UserLoginByUserName(viewsets.ModelViewSet):
     def retrieve(self, request, format = None):
         username = request.data['username']
         password = request.data['password']
-        if Profile.objects.filter(username = username, password = password).count() == 0:
-            raise serializers.ValidationError({
-                "message" : "wrong username or password"
-            })
-        else:
-            u = Profile.objects.get(username = username, password = password)
-            return Response(UserSerializer(u).data)
+        print(username, password)
+        # if Profile.objects.filter(username = username).count() == 0:
+        #     raise serializers.ValidationError({
+        #         "message" : "wrong username"
+        #     })
+        # else:
+        # u = Profile.objects.get(username = username, password = password)
+        u = authenticate(username = username, password = password)
+        return Response(UserSerializer(u).data)
+        # except Profile.DoesNotExist:
+        #     raise serializers.ValidationError({
+        #         "message" : "RIDIM"
+        #     })
