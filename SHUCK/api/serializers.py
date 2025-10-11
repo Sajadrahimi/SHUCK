@@ -3,27 +3,17 @@ from django.contrib.auth.models import User as DjangoUser
 from Book.models import Publisher, Book, Author, Translator
 from user.models import User
 
-class PublisherSerializer(serializers.ModelSerializer) :
+class PrimaryPublisherSerializer(serializers.ModelSerializer) :
     class Meta :
         model = Publisher
-        fields = ['id', 'PublisherName']
+        fields = ['id', 'PublisherName', 'PublisherBooks']
 
 
-class AuthorSerializer(serializers.ModelSerializer) :
-
-    def create(self, validated_data):
-        a = Author
-        a.AuthorName = validated_data.get("AuthorName")
-
+class PrimaryAuthorSerializer(serializers.ModelSerializer) :
     class Meta :
         model = Author
         fields = ['id', 'AuthorName']
 
-
-class AuthorSerializer(serializers.ModelSerializer) :
-    class Meta :
-        model = Author
-        fields = ['id', 'AuthorName']
 
 
 class TranslatorSerializer(serializers.ModelSerializer) :
@@ -33,23 +23,34 @@ class TranslatorSerializer(serializers.ModelSerializer) :
 
 
 class BookSerializer(serializers.ModelSerializer) :
-    BookPublisher = PublisherSerializer()
-    BookAuthor = AuthorSerializer()
+    BookPublisher = PrimaryPublisherSerializer()
+    BookAuthor = PrimaryAuthorSerializer()
     BookTranslator = TranslatorSerializer()
-
-    # def create(self, validated_data):
-    #     b = Book()
-    #     b.BookName = validated_data.get("BookName")
-    #     b.BookSummary = validated_data.get("BookSummary")
-    #     b.BookAuthor = AuthorSerializer.create(validated_data)
-    #     b.BookPublisher = validated_data.get("BookPublisher")
-    #     b.BookTranslator = validated_data.get("BookTranslator")
-
 
     class Meta :
         model = Book
         fields = ['id', 'BookName', 'BookSummary', 'BookPublisher',
                   'BookAuthor', 'BookTranslator', 'BookImage']
+class PrimaryBookSerializer(serializers.ModelSerializer) :
+    BookAuthor = PrimaryAuthorSerializer()
+    BookTranslator = TranslatorSerializer()
+
+    class Meta :
+        model = Book
+        fields = ['id', 'BookName', 'BookSummary',
+                  'BookAuthor', 'BookTranslator', 'BookImage']
+
+class PublisherSerializer(serializers.ModelSerializer) :
+    PublisherBooks = BookSerializer()
+    class Meta :
+        model = Publisher
+        fields = ['id', 'PublisherName', 'PublisherBooks']
+
+class AuthorSerializer(serializers.ModelSerializer) :
+    AuthorBooks = BookSerializer()
+    class Meta :
+        model = Author
+        fields = ['id', 'AuthorName', 'AuthorBooks']
 
 class DjangoUserSerializer(serializers.ModelSerializer):
 

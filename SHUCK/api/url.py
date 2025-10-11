@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^getAllBooks/$', ListAllBooks),
     url(r'^getBook/(?P<pk>[0-9]+)$', BookDetailsByPrimaryKey),
     url(r'^getBook/ByName/(?P<BookName>\w+)$', BookDetailsByBookName),
-    url(r'^getBook/ByAuthor/(?P<BookAuthor>\w+)$', BookDetailsByBookAuthor),
-    url(r'^getBook/ByPublisher/(?P<BookPublisher>\w+)$', BookDetailsByBookPublisher),
+    url(r'^getBook/ByAuthor/(?P<AuthorName>\w+)$', BookDetailsByBookAuthor),
+    url(r'^getBook/ByPublisher/(?P<PublisherName>\w+)$', BookDetailsByBookPublisher),
     url(r'^getUser/(?P<pk>[0-9]+)$', UserDetailsByName)
     ]
