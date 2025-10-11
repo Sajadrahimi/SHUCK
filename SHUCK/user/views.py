@@ -71,11 +71,11 @@ def registration(request):
             last_name = "" #form.cleaned_data.get("last_name")
             email = "" #form.cleaned_data.get("email")
             print(username, password, first_name, last_name)
-            u = Profile.objects.create(username = username, password = password,
+            u = Profile.objects.create(username = username,
                                        email = email, first_name = first_name,
                                        last_name = last_name)
-            u.save()
-            u.token = Token.objects.create(user = u)
+            u.set_password(password)
+            # token = Token.objects.create(user = u)
             u.save()
             return HttpResponse("Hello " + u.username)
 
