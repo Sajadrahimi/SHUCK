@@ -13,14 +13,17 @@ from django.template import loader
 
 
 def login(request) :
+    print("+++++++++++++++ CALLED")
+    print(request.POST)
     username = request.POST.get("username")
     password = request.POST.get("password")
-
+    print("USERNAME: ", username)
+    print("PASSWORD: ", password)
     user = authenticate(request, username = username, password = password)
 
     if user is not None:
         DjangoLogin(request, user)
-        return HttpResponse("Logged in")
+        return redirect('/feeds/feeds')
 
     else :
         return HttpResponse("Wrong Username or Password")
@@ -28,27 +31,29 @@ def login(request) :
 
 def registration(request):
     if request.method == 'POST':
-        print("is POST")
+        print("is POST: ", request.POST)
         form = SignUpForm(request.POST)
+        print("FORM: ", form)
         if form.is_valid():
-
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password1")
-            first_name = "" #form.cleaned_data.get("first_name")
-            last_name = "" #form.cleaned_data.get("last_name")
-            email = "" #form.cleaned_data.get("email")
-            Profile.objects.create_user(username = username, password = password,
-                                     email = email)
-            user = authenticate(username = username, password = password)
-            auth_login(request, user)
-            welcome_post = '{0} has joined SHUCK.'.format(user.username)
-            feed = Feed(user = user, post = welcome_post)
-            feed.save()
-            return redirect('/')
-        else:
-            print(form.cleaned_data.get('password1'), form.cleaned_data.get('password2'))
-            return HttpResponse(form.error_messages)
-
+            print("FORM IS VALID")
+        username = form.cleaned_data.get("username", "")
+        password = form.cleaned_data.get("password")
+        first_name = form.cleaned_data.get("first_name")
+        last_name = "" #form.cleaned_data.get("last_name")
+        email = "" #form.cleaned_data.get("email")
+        print("USERNAME: ", username)
+        print("PASSWORD: ", password)
+        Profile.objects.create_user(username = username, password = password,
+                                 email = email)
+        user = authenticate(username = username, password = password)
+        auth_login(request, user)
+        welcome_post = '{0} has joined SHUCK.'.format(user.username)
+        feed = Feed(user = user, post = welcome_post)
+        feed.save()
+        return redirect('/')
+# else:
+#     pass
+#
 def loign_form(request) :
 
     template = loader.get_template('user/login.html')
@@ -57,5 +62,5 @@ def loign_form(request) :
 def registration_form(request):
     if request.method == 'GET':
         form = SignUpForm()
-        return render(request, 'user/registration_form.html', {'form' : form})
+        return render(request, 'user/signup.html', {'form' : form})
 

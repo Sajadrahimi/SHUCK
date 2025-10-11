@@ -50,10 +50,31 @@
      url('../fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
      url('../fonts/ttf/IRANSansWeb.ttf') format('truetype');
 }
+
+*{
+  direction: ltr;
+}
+
 .a{
   text-decoration: none;
 }
-
+#section1{
+  height: 80px;
+  background: #ECEFF1;
+}
+#section2{
+  /*background: #00897B;*/
+  /*background: #355890;*/
+  background: #607D8B;
+  height: 40px;
+}
+#section3{
+  height: auto;
+  background: #ECEFF1;
+}
+#section4{
+  height: auto;
+}
 .logo{
   margin: 10px 110px 0 0;
 }
@@ -430,7 +451,166 @@
   font-size: 1.7em;
 }
 
-.login-icon{
-  top: -1px;
+
+/************************** Marketing Page ***********************/
+.bg-color{
+  background: #ECEFF1;
 }
 
+.nav-custom{
+  background: #607D8B;
+  height: auto;
+  border: none;
+  margin-top: 10px;
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+  color: white;
+}
+
+.marketing-report1{
+  height: 200px;
+  background: #fca34c;
+  padding: 5px;
+  border-radius: 5px;
+  color: #333333;
+  transition: .3s;
+  margin-top: 10px;
+  /*cursor: pointer;*/
+}
+
+.marketing-report1:hover{
+  -webkit-filter: blur(1px);
+}
+
+.marketing-report2{
+  height: 200px;
+  background: #29B6F6;
+  padding: 5px;
+  border-radius: 5px;
+  color: #333333;
+  transition: .3s;
+  margin-top: 10px;
+}
+
+.marketing-report2:hover{
+  -webkit-filter: blur(1px);
+}
+
+.marketing-report3{
+  height: 200px;
+  background: #ef5350;
+  padding: 5px;
+  border-radius: 5px;
+  color: #333333;
+  transition: .3s;
+  margin-top: 10px;
+}
+
+.marketing-report3:hover{
+  -webkit-filter: blur(1px);
+}
+
+.report-icon{
+  font-size: 35pt;
+  padding-top: 60px;
+  padding-left: 10px; 
+  display: inline-block;
+}
+
+.report-text{
+  font-size: 35pt;
+  padding-top: 55px;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.sign-in-menu{
+  margin: 5px 0 0 20px;
+}
+
+.profile-pic{
+  width: 60px;
+  height: 60px;
+}
+
+.td-r{
+  padding: 0 20px 10px 80px;
+}
+
+.td-l{
+  padding-bottom: 10px;
+}
+
+#buyModal table a{
+  text-decoration: none;
+  color: #333;
+}
+
+#buyModal table a:hover{
+  color: red;
+}
+
+#table-economic{
+  margin: 0 auto;
+  /*margin-top: 40px;*/
+  font-size: 20pt;
+}
+
+.td-left-economic{
+  padding-right: 50px;
+}
+
+.btn-economic{
+  margin-top: 20px;
+}
+
+.economic{
+  border: 2px solid #97abb4;
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/**************************** Ticket Page ******************************/
+.ticket-page-field{
+  display: inline-block;
+  width:300px;
+}
+
+.btn-send-login-page{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.manage-ticket-box-body{
+  overflow: auto;
+  height: 300px;
+}
+
+.manage-ticket-box{
+  display: inline-block;
+  width: 350px;
+  height: 345px;
+  border-radius: 5px;
+  border-right: 2px solid #CFD8DC;
+  border-bottom: 2px solid #CFD8DC;
+  border-left: 2px solid #CFD8DC;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px gray;
+  margin-top: 40px;
+}
+
+.manage-ticket-box a{
+  text-decoration: none;
+  color: black;
+}
+.manage-ticket-box a:hover{
+  color: #ef5350;
+}
+
+.line-ticket-page-box{
+  border-top: 2px solid #97abb4;
+}

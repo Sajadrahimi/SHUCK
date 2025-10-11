@@ -35,7 +35,7 @@ class Comment(models.Model) :
     # user = models.OneToOneField('user.models.User')
     text = models.TextField(max_length = 500, blank = False)
 
-    CommentOnBook = models.OneToOneField('Book.Book', null = True)
+    # CommentOnBook = models.OneToOneField('Book.Book', null = True, on_delete = models.CASCADE)
 
     def __str__(self) :
         return self.text
@@ -44,9 +44,9 @@ class Comment(models.Model) :
 
 class Book(models.Model) :
     BookName = models.CharField(max_length = 50, null = True, blank = False)
-    BookPublisher = models.ForeignKey('Publisher', null = True)
-    BookAuthor = models.ForeignKey('Author', null = True)
-    BookTranslator = models.ForeignKey('Translator', blank = True, null = True)
+    BookPublisher = models.ForeignKey('Publisher', null = True, on_delete = models.CASCADE)
+    BookAuthor = models.ForeignKey('Author', null = True,on_delete = models.CASCADE)
+    BookTranslator = models.ForeignKey('Translator', blank = True, null = True, on_delete = models.CASCADE)
     BookDateOfPublish = models.DateField(null = True, blank = True)
     BookImage = models.ImageField(null = True, blank = True)
     BookPageCount = models.IntegerField(null = True)

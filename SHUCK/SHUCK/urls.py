@@ -18,7 +18,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from core import views as core
 from search import views as search
-
+from activities import views as activities_views
 urlpatterns = [
     url(r'^$', core.home, name = 'home'),
     url(r'^search/$', search.search, name = 'search'),
@@ -30,14 +30,20 @@ urlpatterns = [
     url(r'^settings/save_uploaded_picture/$', core.save_uploaded_picture,
         name = 'save_uploaded_picture'),
     url(r'^settings/password/$', core.password, name = 'password'),
-    # url(r'^logout', auth_views.logout, {'next_page' : '/'}, name = 'logout'),
-    url(r'^(?P<username>[^/]+)/$', core.profile, name='profile'),
+    url(r'^notifications/$', activities_views.notifications,
+        name='notifications'),
+    url(r'^notifications/last/$', activities_views.last_notifications,
+        name='last_notifications'),
+    url(r'^notifications/check/$', activities_views.check_notifications,
+        name='check_notifications'),
+    url(r'^logout', auth_views.logout, {'next_page' : '/'}, name = 'logout'),
+    url(r'^(?P<username>[^/]+)$', core.profile, name='profile'),
     url(r'^network/network/$', core.network, name='network'),
     url(r'^admin/admin/', admin.site.urls),
     url(r'^user/', include('user.url')),
     url(r'^book/', include('Book.url')),
     url(r'^api/', include('api.url')),
     url(r'^feeds/', include('feeds.url')),
-    url(r'^messenger/inbox/', include('messenger.url')),
-
+    url(r'^messages/', include('messenger.url')),
 ]
+handler404 = 'core.views.handle_404'

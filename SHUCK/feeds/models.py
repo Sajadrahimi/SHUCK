@@ -50,6 +50,7 @@ class Feed(models.Model):
         return self.likes
 
     def get_likes(self):
+        self.calculate_likes()
         likes = Activity.objects.filter(activity_type=Activity.LIKE,
                                         feed=self.pk)
         return likes

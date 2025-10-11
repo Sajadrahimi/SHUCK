@@ -1,62 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/SHUCK/SHUCK/urls.py" description="2. Add a URL to urlpatterns:  url(r'^blog/', inclu..." line="13" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b47dc69c-cde6-472e-9d9e-cca2ce33a548" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/eot/IRANSansWeb.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/eot/IRANSansWeb_Bold.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/eot/IRANSansWeb_Light.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/eot/IRANSansWeb_Medium.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/eot/IRANSansWeb_UltraLight.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/ttf/IRANSansWeb.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/ttf/IRANSansWeb_Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/ttf/IRANSansWeb_Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/ttf/IRANSansWeb_Medium.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/ttf/IRANSansWeb_UltraLight.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff/IRANSansWeb.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff/IRANSansWeb_Bold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff/IRANSansWeb_Light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff/IRANSansWeb_Medium.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff/IRANSansWeb_UltraLight.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff2/IRANSansWeb.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff2/IRANSansWeb_Bold.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff2/IRANSansWeb_Light.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff2/IRANSansWeb_Medium.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/woff2/IRANSansWeb_UltraLight.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/js/back-to-top.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/static/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/user/templates/user/login.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/Book/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/Book/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/activities/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/activities/migrations/0002_notification_feed.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/activities/migrations/0003_auto_20171114_1339.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/activities/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/feeds/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/feeds/migrations/0002_feed_user.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/feeds/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/messenger/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/messenger/migrations/0002_auto_20171114_1339.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/messenger/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/user/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/user/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/user/templates/user/login_form.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/Book/templates/Book/book.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/activities/static/css/notifications.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/activities/static/js/notifications.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/activities/templates/activities/last_notifications.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/activities/templates/activities/notifications.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/core/static/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/core/static/css/footer.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/core/static/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/core/static/js/back-to-top.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SHUCK/core/static/js/bootstrap.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SHUCK/user/templates/user/registration_form.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/Book/models.py" afterPath="$PROJECT_DIR$/SHUCK/Book/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/Book/views.py" afterPath="$PROJECT_DIR$/SHUCK/Book/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/SHUCK/settings.py" afterPath="$PROJECT_DIR$/SHUCK/SHUCK/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/SHUCK/staticfiles/css/style.css" afterPath="$PROJECT_DIR$/SHUCK/SHUCK/staticfiles/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/SHUCK/staticfiles/js/picture.js" afterPath="$PROJECT_DIR$/SHUCK/SHUCK/staticfiles/js/picture.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/SHUCK/templates/404.html" afterPath="$PROJECT_DIR$/SHUCK/SHUCK/templates/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/SHUCK/templates/base.html" afterPath="$PROJECT_DIR$/SHUCK/SHUCK/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/SHUCK/urls.py" afterPath="$PROJECT_DIR$/SHUCK/SHUCK/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/api/serializers.py" afterPath="$PROJECT_DIR$/SHUCK/api/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/api/url.py" afterPath="$PROJECT_DIR$/SHUCK/api/url.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/api/views.py" afterPath="$PROJECT_DIR$/SHUCK/api/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/activities/models.py" afterPath="$PROJECT_DIR$/SHUCK/activities/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/activities/views.py" afterPath="$PROJECT_DIR$/SHUCK/activities/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/core/templates/core/cover.html" afterPath="$PROJECT_DIR$/SHUCK/core/templates/core/cover.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/core/views.py" afterPath="$PROJECT_DIR$/SHUCK/core/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/feeds/models.py" afterPath="$PROJECT_DIR$/SHUCK/feeds/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/feeds/views.py" afterPath="$PROJECT_DIR$/SHUCK/feeds/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/messenger/models.py" afterPath="$PROJECT_DIR$/SHUCK/messenger/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/messenger/templates/messenger/includes/partial_conversations.html" afterPath="$PROJECT_DIR$/SHUCK/messenger/templates/messenger/includes/partial_conversations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/messenger/templates/messenger/includes/partial_message.html" afterPath="$PROJECT_DIR$/SHUCK/messenger/templates/messenger/includes/partial_message.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/messenger/views.py" afterPath="$PROJECT_DIR$/SHUCK/messenger/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/search/views.py" afterPath="$PROJECT_DIR$/SHUCK/search/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/user/forms.py" afterPath="$PROJECT_DIR$/SHUCK/user/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/user/models.py" afterPath="$PROJECT_DIR$/SHUCK/user/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/user/templates/user/registration_form.html" afterPath="$PROJECT_DIR$/SHUCK/user/templates/user/registration_form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/user/url.py" afterPath="$PROJECT_DIR$/SHUCK/user/url.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHUCK/user/views.py" afterPath="$PROJECT_DIR$/SHUCK/user/views.py" />
     </list>
@@ -85,82 +68,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SHUCK/api/serializers.py">
+      <file leaf-file-name="book.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SHUCK/Book/templates/Book/book.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="304" column="23" lean-forward="false" selection-start-line="304" selection-start-column="23" selection-end-line="304" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#371#468#0" expanded="false" />
-                <element signature="e#532#821#0" expanded="false" />
-                <element signature="e#892#971#0" expanded="false" />
-                <element signature="e#1032#1313#0" expanded="false" />
-                <element signature="e#1233#1313#0" expanded="false" />
-                <element signature="e#1381#1454#0" expanded="false" />
-                <element signature="e#1519#1832#0" expanded="false" />
-                <element signature="e#1904#1985#0" expanded="false" />
-                <element signature="e#2044#4631#0" expanded="false" />
-                <element signature="e#4697#7056#0" expanded="false" />
-                <element signature="e#7156#7612#0" expanded="false" />
-                <element signature="e#7661#8465#0" expanded="false" />
-                <element signature="e#9620#11452#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SHUCK/user/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SHUCK/user/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="-9792">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SHUCK/api/views.py">
+        <entry file="file://$PROJECT_DIR$/SHUCK/Book/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="894">
-              <caret line="43" column="23" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            <state relative-caret-position="576">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="url.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SHUCK/api/url.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="830">
-              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,40 +102,43 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hum</find>
-      <find>hu</find>
+      <find>artic</find>
+      <find>search</find>
+      <find>page_us</find>
       <find>us</find>
-      <find>use</find>
-      <find>user.U</find>
-      <find>user.Us</find>
-      <find>user.Use</find>
-      <find>user.User</find>
-      <find>Pro</find>
-      <find>Pr</find>
-      <find>P</find>
-      <find>U</find>
-      <find>Us</find>
-      <find>Use</find>
-      <find>UserProfile</find>
-      <find>UserProfil</find>
-      <find>UserProfi</find>
-      <find>UserProf</find>
-      <find>UserPro</find>
-      <find>UserPr</find>
-      <find>UserP</find>
+      <find>@aj</find>
+      <find>feed</find>
+      <find>Ac</find>
+      <find>Feed</find>
+      <find>template</find>
+      <find>set</find>
       <find>User</find>
-      <find>Profile</find>
-      <find>user.</find>
-      <find>user</find>
-      <find>user.p</find>
-      <find>home</find>
+      <find>Up;</find>
+      <find>MEDIA</find>
+      <find>upload</find>
+      <find>get</find>
+      <find>savr</find>
+      <find>Save</find>
       <find>pro</find>
-      <find>src</find>
-      <find>css</find>
+      <find>log</find>
+      <find>form</find>
+      <find>id_p</find>
+      <find>templ</find>
+      <find>Bootcamp</find>
+      <find>LOGIN</find>
+      <find>Auth</find>
+      <find>like</find>
+      <find>noti</find>
+      <find>users</find>
+      <find>lis</find>
+      <find>list</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>#@ajax_required</replace>
+      <replace>@ajax_required</replace>
+      <replace>Profile</replace>
+      <replace>SHUCK</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -220,53 +147,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/user/models.py" />
-        <option value="$PROJECT_DIR$/user/migrations/url.py" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/urls.py" />
-        <option value="$PROJECT_DIR$/user/login_from.html" />
-        <option value="$PROJECT_DIR$/user/templates/login_form.html" />
-        <option value="$PROJECT_DIR$/user/url.py" />
-        <option value="$PROJECT_DIR$/user/templates/user/login_form.html" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/settings.py" />
-        <option value="$PROJECT_DIR$/user/views.py" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/user/url.py" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/user/templates/user/login_form.html" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/user/models.py" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/user/views.py" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/user/templates/user/registration_form.html" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/user/forms.py" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/Book_SocMedia/settings.py" />
-        <option value="$PROJECT_DIR$/Book_SocMedia/Book/models.py" />
         <option value="$PROJECT_DIR$/SHUCK/Book/admin.py" />
-        <option value="$PROJECT_DIR$/SHUCK/Book/models.py" />
         <option value="$PROJECT_DIR$/SHUCK/feeds/urls.py" />
         <option value="$PROJECT_DIR$/SHUCK/messenger/admin.py" />
         <option value="$PROJECT_DIR$/SHUCK/feeds/admin.py" />
         <option value="$PROJECT_DIR$/SHUCK/activities/admin.py" />
-        <option value="$PROJECT_DIR$/SHUCK/feeds/models.py" />
-        <option value="$PROJECT_DIR$/SHUCK/messenger/models.py" />
-        <option value="$PROJECT_DIR$/SHUCK/feeds/url.py" />
-        <option value="$PROJECT_DIR$/SHUCK/feeds/views.py" />
         <option value="$PROJECT_DIR$/SHUCK/messenger/url.py" />
-        <option value="$PROJECT_DIR$/SHUCK/activities/views.py" />
-        <option value="$PROJECT_DIR$/SHUCK/messenger/views.py" />
         <option value="$PROJECT_DIR$/SHUCK/user/templates/user/login_form.html" />
-        <option value="$PROJECT_DIR$/SHUCK/templates/base.html" />
-        <option value="$PROJECT_DIR$/SHUCK/activities/models.py" />
-        <option value="$PROJECT_DIR$/SHUCK/feeds/templates/feeds/partial_feed.html" />
-        <option value="$PROJECT_DIR$/SHUCK/feeds/templates/feeds/feeds.html" />
-        <option value="$PROJECT_DIR$/SHUCK/feeds/templates/feeds/base.html" />
-        <option value="$PROJECT_DIR$/SHUCK/user/url.py" />
-        <option value="$PROJECT_DIR$/SHUCK/user/templates/user/login.html" />
-        <option value="$PROJECT_DIR$/SHUCK/SHUCK/settings.py" />
-        <option value="$PROJECT_DIR$/SHUCK/user/forms.py" />
         <option value="$PROJECT_DIR$/SHUCK/user/templates/user/registration_form.html" />
-        <option value="$PROJECT_DIR$/SHUCK/SHUCK/urls.py" />
-        <option value="$PROJECT_DIR$/SHUCK/user/views.py" />
-        <option value="$PROJECT_DIR$/SHUCK/api/views.py" />
         <option value="$PROJECT_DIR$/SHUCK/api/url.py" />
-        <option value="$PROJECT_DIR$/SHUCK/user/models.py" />
         <option value="$PROJECT_DIR$/SHUCK/api/serializers.py" />
+        <option value="$PROJECT_DIR$/SHUCK/user/templates/user/login.html" />
+        <option value="$PROJECT_DIR$/SHUCK/api/views.py" />
+        <option value="$PROJECT_DIR$/SHUCK/templates/base.html" />
+        <option value="$PROJECT_DIR$/SHUCK/feeds/templates/feeds/base.html" />
+        <option value="$PROJECT_DIR$/SHUCK/feeds/url.py" />
+        <option value="$PROJECT_DIR$/SHUCK/core/templates/core/base.html" />
+        <option value="$PROJECT_DIR$/SHUCK/core/templates/core/network.html" />
+        <option value="$PROJECT_DIR$/SHUCK/core/templates/core/password.html" />
+        <option value="$PROJECT_DIR$/SHUCK/core/templates/core/profile.html" />
+        <option value="$PROJECT_DIR$/SHUCK/core/templates/core/settings.html" />
+        <option value="$PROJECT_DIR$/SHUCK/feeds/templates/feeds/feed.html" />
+        <option value="$PROJECT_DIR$/SHUCK/messenger/templates/messenger/base_messages.html" />
+        <option value="$PROJECT_DIR$/SHUCK/search/templates/search/search.html" />
+        <option value="$PROJECT_DIR$/SHUCK/search/templates/search/results.html" />
+        <option value="$PROJECT_DIR$/SHUCK/feeds/templates/feeds/feeds.html" />
+        <option value="$PROJECT_DIR$/SHUCK/messenger/templates/messenger/inbox.html" />
+        <option value="$PROJECT_DIR$/SHUCK/core/forms.py" />
+        <option value="$PROJECT_DIR$/SHUCK/feeds/templates/feeds/partial_feed.html" />
+        <option value="$PROJECT_DIR$/SHUCK/core/static/js/picture.js" />
+        <option value="$PROJECT_DIR$/SHUCK/core/templates/core/picture.html" />
+        <option value="$PROJECT_DIR$/SHUCK/Book/models.py" />
+        <option value="$PROJECT_DIR$/SHUCK/search/views.py" />
+        <option value="$PROJECT_DIR$/SHUCK/messenger/models.py" />
+        <option value="$PROJECT_DIR$/SHUCK/user/templates/user/signup.html" />
+        <option value="$PROJECT_DIR$/SHUCK/SHUCK/templates/base.html" />
+        <option value="$PROJECT_DIR$/SHUCK/user/forms.py" />
+        <option value="$PROJECT_DIR$/SHUCK/user/url.py" />
+        <option value="$PROJECT_DIR$/SHUCK/core/templates/core/cover.html" />
+        <option value="$PROJECT_DIR$/SHUCK/user/views.py" />
+        <option value="$PROJECT_DIR$/SHUCK/core/views.py" />
+        <option value="$PROJECT_DIR$/SHUCK/feeds/models.py" />
+        <option value="$PROJECT_DIR$/SHUCK/SHUCK/settings.py" />
+        <option value="$PROJECT_DIR$/SHUCK/activities/views.py" />
+        <option value="$PROJECT_DIR$/SHUCK/activities/models.py" />
+        <option value="$PROJECT_DIR$/SHUCK/user/models.py" />
+        <option value="$PROJECT_DIR$/SHUCK/feeds/views.py" />
+        <option value="$PROJECT_DIR$/SHUCK/messenger/views.py" />
+        <option value="$PROJECT_DIR$/SHUCK/SHUCK/urls.py" />
+        <option value="$PROJECT_DIR$/SHUCK/messenger/templates/messenger/includes/partial_message.html" />
+        <option value="$PROJECT_DIR$/SHUCK/messenger/templates/messenger/includes/partial_conversations.html" />
+        <option value="$PROJECT_DIR$/SHUCK/Book/views.py" />
       </list>
     </option>
   </component>
@@ -277,10 +208,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="92" />
-    <option name="y" value="-2153" />
-    <option name="width" value="3749" />
-    <option name="height" value="2154" />
+    <option name="x" value="93" />
+    <option name="y" value="-2118" />
+    <option name="width" value="3747" />
+    <option name="height" value="2118" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -297,7 +228,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -346,7 +276,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="SHUCK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHUCK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHUCK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHUCK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messenger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHUCK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHUCK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHUCK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messenger" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -354,7 +320,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="messenger" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,7 +338,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SHUCK" />
+              <option name="myItemId" value="messenger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messenger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,7 +368,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="Book" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,33 +386,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
+              <option name="myItemId" value="Book" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Book" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SHUCK/Book/templates/Book" />
+      <recent name="$PROJECT_DIR$/SHUCK/activities" />
+      <recent name="$PROJECT_DIR$/SHUCK/SHUCK/templates" />
+      <recent name="$PROJECT_DIR$/SHUCK/core/static/js" />
+      <recent name="$PROJECT_DIR$/SHUCK/core/templates/core" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/SHUCK/user/static" />
       <recent name="$PROJECT_DIR$/user/templates/user" />
       <recent name="$PROJECT_DIR$/user" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SHUCK/user/templates/user" />
-      <recent name="$PROJECT_DIR$/SHUCK/feeds/templates/feeds" />
-      <recent name="$PROJECT_DIR$/SHUCK" />
-      <recent name="$PROJECT_DIR$/SHUCK/activities" />
-      <recent name="$PROJECT_DIR$/SHUCK/feeds" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -671,28 +658,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="92" y="-2153" width="3749" height="2154" extended-state="6" />
+    <frame x="93" y="-2118" width="3747" height="2118" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21816199" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980865" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980865" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18080175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980865" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28394425" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980865" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,327 +695,409 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SHUCK/Book/views.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/templates/messenger/base_messages.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/api/tests.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/search/templates/search/base.html" />
+    <entry file="file://$PROJECT_DIR$/SHUCK/search/templates/search/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/search/templates/search/results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/settings.py" />
+    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/templates/feeds/feeds.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/templates/400.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/tests/__init__.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/templates/core/partial_settings_menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/tests/__init__.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/static/js/ga.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/urls.py" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/decorators.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/staticfiles/js/ga.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/user/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/activities/__init__.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/static/notifications.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/activities/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/activities/tests/__init__.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/static/js/notifications.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="1" column="45" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/templates/feeds/feed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-460">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/static/js/picture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/templates/core/picture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="65" column="78" lean-forward="false" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/templates/core/settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3048">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/search/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1408">
+          <caret line="32" column="58" lean-forward="false" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/static/js/back-to-top.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="124" column="18" lean-forward="false" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SHUCK/Book/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        <state relative-caret-position="448">
+          <caret line="49" column="66" lean-forward="true" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/api/models.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-384">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/user/templates/user/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/url.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5386">
-          <caret line="86" column="15" lean-forward="false" selection-start-line="86" selection-start-column="15" selection-end-line="86" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/user/templates/user/login_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/static/js/ga.js" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state relative-caret-position="1268">
+          <caret line="50" column="91" lean-forward="false" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="91" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SHUCK/feeds/url.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/templates/paginator.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/templates/markdown_editor.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/templates/base.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/templates/500.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/templates/404.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/templates/403.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/templates/400.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/activities/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="68" column="26" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/templates/feeds/partial_feed.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/templates/feeds/feed.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/templates/feeds/feeds.html" />
-    <entry file="file:///usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-338">
-          <caret line="1331" column="4" lean-forward="false" selection-start-line="1331" selection-start-column="4" selection-end-line="1331" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/templates/feeds/base.html" />
-    <entry file="file://$PROJECT_DIR$/SHUCK/activities/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1086">
-          <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/user/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/user/templates/user/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="44" column="37" lean-forward="false" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/django/db/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/settings.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/templates/core/cover.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/user/templates/user/registration_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="999">
+          <caret line="43" column="104" lean-forward="false" selection-start-line="43" selection-start-column="104" selection-end-line="43" selection-end-column="104" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SHUCK/user/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/api/url.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="830">
-          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        <state relative-caret-position="896">
+          <caret line="62" column="32" lean-forward="false" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/api/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="43" column="23" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/rest_framework/fields.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="1789" column="8" lean-forward="false" selection-start-line="1789" selection-start-column="8" selection-end-line="1789" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SHUCK/user/url.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
-          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/Book/url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3712">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/templates/feeds/partial_feed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="89" column="37" lean-forward="false" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/staticfiles/js/notifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <marker date="1512576078767" expanded="true" signature="425:442" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/activities/static/js/notifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <marker date="1507793906000" expanded="true" signature="425:442" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/activities/templates/activities/last_notifications.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/activities/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-394">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/activities/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="69" column="38" lean-forward="false" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SHUCK/user/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="566">
+          <caret line="98" column="36" lean-forward="false" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SHUCK/api/serializers.py">
+    <entry file="file://$PROJECT_DIR$/SHUCK/feeds/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="304" column="23" lean-forward="false" selection-start-line="304" selection-start-column="23" selection-end-line="304" selection-end-column="23" />
+        <state relative-caret-position="743">
+          <caret line="161" column="17" lean-forward="false" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#371#468#0" expanded="false" />
-            <element signature="e#532#821#0" expanded="false" />
-            <element signature="e#892#971#0" expanded="false" />
-            <element signature="e#1032#1313#0" expanded="false" />
-            <element signature="e#1233#1313#0" expanded="false" />
-            <element signature="e#1381#1454#0" expanded="false" />
-            <element signature="e#1519#1832#0" expanded="false" />
-            <element signature="e#1904#1985#0" expanded="false" />
-            <element signature="e#2044#4631#0" expanded="false" />
-            <element signature="e#4697#7056#0" expanded="false" />
-            <element signature="e#7156#7612#0" expanded="false" />
-            <element signature="e#7661#8465#0" expanded="false" />
-            <element signature="e#9620#11452#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="129" column="25" lean-forward="true" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1191">
+          <caret line="54" column="79" lean-forward="false" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/SHUCK/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <folding>
+            <element signature="e#647#698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="30" column="52" lean-forward="false" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/templates/messenger/inbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1664">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/templates/messenger/includes/partial_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/messenger/templates/messenger/includes/partial_conversations.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/Book/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHUCK/Book/templates/Book/book.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9792">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

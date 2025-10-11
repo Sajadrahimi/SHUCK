@@ -31,9 +31,6 @@ def search(request):
         results = {}
         results['feed'] = Feed.objects.filter(post__icontains=querystring,
                                               parent=None)
-        # results['articles'] = Article.objects.filter(
-        #     Q(title__icontains=querystring) | Q(
-        #         content__icontains=querystring), status='P')
         results['users'] = Profile.objects.filter(
             Q(username__icontains=querystring) | Q(
                 first_name__icontains=querystring) | Q(
@@ -65,14 +62,10 @@ def get_autocomplete_suggestions(request):
         Q(username__icontains=querystring) | Q(
             first_name__icontains=querystring) | Q(
                 last_name__icontains=querystring)))
-    # articles = list(
-    #     Article.objects.filter(Q(title__icontains=querystring) | Q(
-    #         content__icontains=querystring), status='P'))
 
     # Add all the retrieved users, articles to data_retrieved
     # list.
     data_retrieved = users
-    # data_retrieved.extend(articles)
     results = []
     for data in data_retrieved:
         data_json = {}
@@ -81,11 +74,6 @@ def get_autocomplete_suggestions(request):
             data_json['id'] = data.id
             data_json['label'] = data.username
             data_json['value'] = data.username
-
-        # if isinstance(data, Article):
-        #     data_json['id'] = data.id
-        #     data_json['label'] = data.title
-        #     data_json['value'] = data.title
 
         results.append(data_json)
 

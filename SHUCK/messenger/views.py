@@ -11,9 +11,11 @@ from .models import Message
 
 @login_required
 def inbox(request):
+    print("INBOX CALLED")
     conversations = Message.get_conversations(user=request.user)
     users_list = Profile.objects.filter(
         is_active=True).exclude(username=request.user).order_by('username')
+    print("USER LIST: ", users_list)
     active_conversation = None
     messages = None
     if conversations:

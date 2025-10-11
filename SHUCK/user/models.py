@@ -7,8 +7,8 @@ from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-
+from django.contrib.auth.models import AbstractUser, User
+from activities.models import Notification
 
 class Shelf(models.Model):
     shelf_name = models.CharField(max_length = 30, null = False)
@@ -46,6 +46,15 @@ class Profile(AbstractUser) :
 
         return url
 
+    def get_screen_name(self):
+        try:
+            if self.username:
+                return self.username
+            else:
+                return self.user.username
+        except:
+            return self.user.username
+
     def get_avatar(self):
         no_picture = 'http://trybootcamp.vitorfs.com/static/img/user.png'
         try:
@@ -70,6 +79,43 @@ class Profile(AbstractUser) :
     def create_auth_token(sender, instance = None, created = False, **kwargs) :
         if created :
             Token.objects.create(user = instance)
+
+    def notify_liked(self, feed) :
+        print("****** NOTIFY LIKED CALLED")
+        print("IN: ", self)
+        print("ON: ", feed.user.username)
+        if self != feed.user.username :
+            Notification(notification_type = Notification.LIKED,
+                         from_user = self, to_user = feed.user,
+                         feed = feed).save()
+
+    def unotify_liked(self, feed) :
+        if self != feed.user.username :
+            Notification.objects.filter(notification_type = Notification.LIKED,
+                                        from_user = self, to_user = feed.user,
+                                        feed = feed).delete()
+
+    def notify_commented(self, feed) :
+        print("****** NOTIFY COMMENT CALLED")
+        print("IN: ", self)
+        print("ON: ", feed.user.username)
+        if self != feed.user.username :
+            Notification(notification_type = Notification.COMMENTED,
+                         from_user = self, to_user = feed.user,
+                         feed = feed).save()
+
+    def notify_also_commented(self, feed) :
+        comments = feed.get_comments()
+        users = []
+        for comment in comments :
+            if comment.user.username != self.userername and comment.user.username != feed.user.username :
+                users.append(comment.user.pk)
+
+        users = list(set(users))
+        for user in users :
+            Notification(notification_type = Notification.ALSO_COMMENTED,
+                         from_user = self,
+                         to_user = User(id = user), feed = feed).save()
 
     def __str__(self) :
         return str(self.username)

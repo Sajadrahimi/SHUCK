@@ -10,11 +10,12 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-from unipath import Path
+# from unipath import Path
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_DIR = Path(__file__).parent
-
+PROJECT_DIR = BASE_DIR + '/SHUCK'
+print("BASE _ DIR: ", BASE_DIR)
+print ("PROJECT _ DIR: ", PROJECT_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -71,7 +72,7 @@ TEMPLATES = [
         #
         # ],
         'DIRS' : [
-            PROJECT_DIR.child('templates'),
+            PROJECT_DIR + '/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -159,14 +160,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_ROOT = PROJECT_DIR.parent.child('staticfiles')
+STATIC_ROOT = PROJECT_DIR + '/staticfiles'
+print("STATIC ROOT: ", STATIC_ROOT)
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    PROJECT_DIR.child('static'),
+    PROJECT_DIR + '/static',
 )
 
-MEDIA_ROOT = PROJECT_DIR.parent.child('media')
+MEDIA_ROOT = PROJECT_DIR + '/media'
 MEDIA_URL = '/media/'
 
 LOGIN_URL = '/'
