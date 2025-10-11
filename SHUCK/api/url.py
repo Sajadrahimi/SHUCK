@@ -28,7 +28,12 @@ Register = views.UserViewSetByUserName.as_view({
 })
 
 Auth = views.UserLoginByToken.as_view({
-    'get' : 'retrieve'
+    'get' : 'retrieve',
+    'post': 'retrieve'
+})
+login = views.UserLoginByUserName.as_view({
+    # 'get' : 'retrieve',
+    'post': 'retrieve'
 })
 urlpatterns = [
     url(r'^getAllBooks/$', ListAllBooks),
@@ -38,5 +43,6 @@ urlpatterns = [
     url(r'^getBook/ByPublisher/(?P<PublisherName>\w+)$', BookDetailsByBookPublisher),
     url(r'^getProfile/(?P<pk>[0-9]+)$', UserDetailsByPrimaryKey),
     url(r'^register/$', Register),
-    url(r'^auth/(?P<key>\w+)$', Auth)
+    url(r'^auth/(?P<key>\w+)$', Auth),
+    url(r'^auth1/$', login)
     ]
