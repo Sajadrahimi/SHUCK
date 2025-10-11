@@ -1,0 +1,32 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Registeration</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Register!</h1>#}
+{#    <form action="/user/submit_registration/" method="POST">#}
+{#        name = <input name="name" type="text" maxlength="20"/><br>#}
+{#        family name = <input name="family_name" type="text" maxlength="30"/><br>#}
+{#        username = <input name="username" type="text"/><br>#}
+{#        email = <input name="email" type="email"/><br>#}
+{#        birth date = <input name="birth_date" type="date"/><br>#}
+{#        bio = <input name="bio" type="text" maxlength="500"/><br>#}
+{#        location = <input name="location" type="text" maxlength="30"/><br>#}
+{#        phone number = <input name="phone_number" type="tel"/><br>#}
+{#        password = <input name="password" type="password"><br>#}
+{#        <button type="submit" >Submit</button><br>#}
+{#        <button type="reset" >Reset</button>#}
+{#        {% csrf_token %}#}
+{#    </form>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+  <h2>Sign up</h2>
+  <form method="post" action="/user/submit_registration/">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
