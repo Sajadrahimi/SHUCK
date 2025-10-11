@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^register/$', views.registration_form, name = "Registeration Form"),
     url(r'^submit_registration/$', views.registeration, name = "Registration"),
     url(r'^', views.loign_form, name = "Login Form"),
+
 ]

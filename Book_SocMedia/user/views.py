@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm
+
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login as DjangoLogin, logout
 from django.http import request, HttpResponse
@@ -50,3 +50,4 @@ def registration_form(request):
     if request.method == 'GET':
         form = SignUpForm()
         return render(request, 'user/registration_form.html', {'form' : form})
+
