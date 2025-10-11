@@ -11,14 +11,17 @@ def login(request) :
     password = request.POST["password"]
     user = authenticate(request, username = username, password = password)
 
-    if user is not None :
+    if user is not None and request.POST["g-recaptcha-response"] != '':
         print("VERIFIED")
         DjangoLogin(request, user)
         return HttpResponse("Logged in")
+    elif request.POST["g-recaptcha-response"] == '':
+        return HttpResponse("You Bastard ROBOT")
     else :
         # ERR
-        return HttpResponse("Wrong username or password")
-
+        # template = loader.get_template('user/login_form.html')
+        # return HttpResponse(template.render({'is_hidden'|'hidden'}, request))
+        return HttpResponse("Wrong Username or Password")
 def registeration(request):
     #
     # name = request.POST.get("name")
