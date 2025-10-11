@@ -13,54 +13,52 @@ from django.template import loader
 
 
 def login(request) :
-    username = request.POST["username"]
-    password = request.POST["password"]
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+
     user = authenticate(request, username = username, password = password)
 
-    # if user is not None and request.POST["g-recaptcha-response"] != '':
     if user is not None:
-        print("VERIFIED")
         DjangoLogin(request, user)
         return HttpResponse("Logged in")
-    # elif request.POST["g-recaptcha-response"] == '':
-    #     return HttpResponse("You Bastard ROBOT")
+
     else :
         return HttpResponse("Wrong Username or Password")
 
 
-def getReads(request):
-    print("**********************")
-    books = Profile.objects.filter(username = 'sajad2').values('Reads')
-    out = []
-    for b in books:
-        book = Book.objects.get(pk = b['Reads'])
-        out.append(book)
-    return HttpResponse(out)
-def getReads(request):
-    print("**********************")
-    books = Profile.objects.filter(username = 'sajad2').values('Reads')
-    out = []
-    for b in books:
-        book = Book.objects.get(pk = b['Reads'])
-        out.append(book)
-    return HttpResponse(out)
-def getToReads(request):
-    print("**********************")
-    books = Profile.objects.filter(username = 'sajad2').values('toReads')
-    out = []
-    for b in books:
-        book = Book.objects.get(pk = b['toReads'])
-        out.append(book)
-    return HttpResponse(out)
-def getReadings(request):
-    print("**********************")
-    books = Profile.objects.filter(username = 'sajad2').values('Readings')
-    out = []
-    for b in books:
-        book = Book.objects.get(pk = b['Readings'])
-        out.append(book)
-    return HttpResponse(out)
-
+# def getReads(request):
+#     print("**********************")
+#     books = Profile.objects.filter(username = 'sajad2').values('Reads')
+#     out = []
+#     for b in books:
+#         book = Book.objects.get(pk = b['Reads'])
+#         out.append(book)
+#     return HttpResponse(out)
+# def getReads(request):
+#     print("**********************")
+#     books = Profile.objects.filter(username = 'sajad2').values('Reads')
+#     out = []
+#     for b in books:
+#         book = Book.objects.get(pk = b['Reads'])
+#         out.append(book)
+#     return HttpResponse(out)
+# def getToReads(request):
+#     print("**********************")
+#     books = Profile.objects.filter(username = 'sajad2').values('toReads')
+#     out = []
+#     for b in books:
+#         book = Book.objects.get(pk = b['toReads'])
+#         out.append(book)
+#     return HttpResponse(out)
+# def getReadings(request):
+#     print("**********************")
+#     books = Profile.objects.filter(username = 'sajad2').values('Readings')
+#     out = []
+#     for b in books:
+#         book = Book.objects.get(pk = b['Readings'])
+#         out.append(book)
+#     return HttpResponse(out)
+#
 def registration(request):
     if request.method == 'POST':
         print("is POST")
