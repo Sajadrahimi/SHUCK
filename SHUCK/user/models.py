@@ -27,8 +27,8 @@ class User(AbstractUser) :
                                  choices = types,
                                  default = 'U')
     Reads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Read")
-    toReads = models.ForeignKey('Book.Book', null = True, blank = True, related_name = "toRead")
-    Readings = models.ForeignKey('Book.Book', null = True, blank = True, related_name = "Reading")
+    toReads = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "toRead")
+    Readings = models.ManyToManyField('Book.Book', null = True, blank = True, related_name = "Reading")
 
     def __str__(self) :
         return str(self.username)
