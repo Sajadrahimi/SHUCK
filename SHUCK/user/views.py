@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login as DjangoLogin
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as DjangoLogin
 from django.http import request, HttpResponse
 from .models import User, Shelf
 from .forms import SignUpForm
@@ -32,13 +33,13 @@ def registration(request):
             first_name = form.cleaned_data.get("first_name")
             last_name = form.cleaned_data.get("last_name")
             print(username, password, first_name, last_name)
-            user = authenticate(request, username = username, password = password,
-                                first_name = first_name, last_name = last_name)
-            print("************", user)
-            u = User.objects.create(django_user = user)
-            u.createShelves()
+            # user = authenticate(username = username, password = password,
+            #                     first_name = first_name, last_name = last_name)
+            # print("************", user)
+            u = User.objects.create(username = username, password = password)
             u.save()
-            return HttpResponse("Hello " + user.username)
+            # u.shelves.objects.create(shelf_name = 'Read')
+            return HttpResponse("Hello " + u.username)
 
         else:
             return HttpResponse(form.error_messages)
