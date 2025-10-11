@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load i18n %}
 
-{% block title %}{{ page_user.profile.get_screen_name }}{% endblock %}
+{% block title %}{{ page_user.profile.username }}{% endblock %}
 
 {% block head %}
   <link href="{% static 'css/profile.css' %}" rel="stylesheet">
@@ -26,26 +26,6 @@
         <span class="count_top"><i class="glyphicon glyphicon-envelope"></i> {% trans 'Feeds' %}</span>
         <div class="count">{{ feeds_count }}</div>
       </div>
-      <div class="col-md-2 col-sm-3 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="glyphicon glyphicon-pencil"></i> {% trans 'Articles' %}</span>
-        <div class="count">{{ article_count }}</div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="glyphicon glyphicon-comment"></i> {% trans 'Comments' %}</span>
-        <div class="count">{{ article_comment_count }}</div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="glyphicon glyphicon-question-sign"></i> {% trans 'Questions' %}</span>
-        <div class="count">{{ question_count }}</div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="glyphicon glyphicon-education"></i> {% trans 'Answers' %}</span>
-        <div class="count">{{ answer_count }}</div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="glyphicon glyphicon-fire"></i> {% trans 'Global Interactions' %}</span>
-        <div class="count">{{ global_interactions }}</div>
-      </div>
       <!-- /data tiles -->
     </div>
     <div class="row">
@@ -68,10 +48,10 @@
       <!--Bar graphic chart-->
       <div class="col-md-9">
           <ul class="nav nav-pills">
-            <li class="active"><a  href="#1b" data-toggle="tab">{% trans 'Last Feeds' %}</a></li>
-            <li><a href="#2b" data-toggle="tab">Activity by type</a></li>
-            <li><a href="#3b" data-toggle="tab">Activity by day</a></li>
-            <li><a href="#4b" data-toggle="tab">Activity by Total</a></li>
+{#            <li class="active">{% trans 'Last Feeds' %}</li>#}
+{#            <li><a href="#2b" data-toggle="tab">Activity by type</a></li>#}
+{#            <li><a href="#3b" data-toggle="tab">Activity by day</a></li>#}
+{#            <li><a href="#4b" data-toggle="tab">Activity by Total</a></li>#}
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="1b">

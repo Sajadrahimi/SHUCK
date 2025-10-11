@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.contrib.auth import views as auth_views
 from django.conf.urls import url, include
 from django.contrib import admin
 from core import views as core
@@ -23,12 +24,20 @@ urlpatterns = [
     url(r'^search/$', search.search, name = 'search'),
     url(r'^autocomplete/$', search.get_autocomplete_suggestions, name='autocomplete'),
     url(r'^settings/$', core.settings, name='settings'),
+    url(r'^settings/picture/$', core.picture, name = 'picture'),
+    url(r'^settings/upload_picture/$', core.upload_picture,
+        name = 'upload_picture'),
+    url(r'^settings/save_uploaded_picture/$', core.save_uploaded_picture,
+        name = 'save_uploaded_picture'),
+    url(r'^settings/password/$', core.password, name = 'password'),
+    # url(r'^logout', auth_views.logout, {'next_page' : '/'}, name = 'logout'),
     url(r'^(?P<username>[^/]+)/$', core.profile, name='profile'),
-    url(r'^network/$', core.network, name='network'),
-    url(r'^admin/', admin.site.urls),
+    url(r'^network/network/$', core.network, name='network'),
+    url(r'^admin/admin/', admin.site.urls),
     url(r'^user/', include('user.url')),
     url(r'^book/', include('Book.url')),
     url(r'^api/', include('api.url')),
-    url(r'^feeds/', include('feeds.url'), name = 'feeds'),
-    url(r'^messenger/', include('messenger.url')),
+    url(r'^feeds/', include('feeds.url')),
+    url(r'^messenger/inbox/', include('messenger.url')),
+
 ]

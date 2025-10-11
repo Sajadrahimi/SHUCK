@@ -1,6 +1,6 @@
 from django import forms
-from django.contrib.auth.models import User
-
+# from django.contrib.auth.models import User
+from user.models import Profile
 
 class ProfileForm(forms.ModelForm):
 
@@ -12,17 +12,9 @@ class ProfileForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=30,
         required=False)
-    job_title = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-        max_length=50,
-        required=False)
     email = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=75,
-        required=False)
-    url = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-        max_length=50,
         required=False)
     location = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}),
@@ -30,9 +22,9 @@ class ProfileForm(forms.ModelForm):
         required=False)
 
     class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'job_title',
-                  'email', 'url', 'location', ]
+        model = Profile
+        fields = ['first_name', 'last_name',
+                  'email', 'location', ]
 
 
 class ChangePasswordForm(forms.ModelForm):
@@ -52,7 +44,7 @@ class ChangePasswordForm(forms.ModelForm):
         required=True)
 
     class Meta:
-        model = User
+        model = Profile
         fields = ['id', 'old_password', 'new_password', 'confirm_password']
 
     def clean(self):
@@ -61,7 +53,7 @@ class ChangePasswordForm(forms.ModelForm):
         new_password = self.cleaned_data.get('new_password')
         confirm_password = self.cleaned_data.get('confirm_password')
         id = self.cleaned_data.get('id')
-        user = User.objects.get(pk=id)
+        user = Profile.objects.get(pk=id)
         if not user.check_password(old_password):
             self._errors['old_password'] = self.error_class([
                 'Old password don\'t match'])

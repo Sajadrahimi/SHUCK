@@ -5,7 +5,7 @@ from user.models import Profile
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
 
-# from SHUCK.decorators import ajax_required
+from .decorators import ajax_required
 from .models import Message
 
 
@@ -56,13 +56,13 @@ def messages(request, username):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def delete(request):
     return HttpResponse()
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def send(request):
     if request.method == 'POST':
         from_user = request.user
@@ -84,7 +84,7 @@ def send(request):
 
 
 @login_required
-#@ajax_requiredx_required
+@ajax_required
 def check(request):
     count = Message.objects.filter(user=request.user, is_read=False).count()
     return HttpResponse(count)

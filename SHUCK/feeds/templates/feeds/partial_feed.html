@@ -3,12 +3,12 @@
 
 <li feed-id="{{ feed.pk }}" csrf="{{ csrf_token }}">
   <div class="feed-container">
-    <a href="{% url 'profile' feed.user.username %}"><img src="{{ feed.user.profile.get_picture }}" class="user"></a>
+    <a href="{% url 'profile' feed.user.username %}"><img src="{{ feed.user.get_avatar }}" class="user"></a>
     <div class="post">
       {% if feed.user == user %}
         <span class="glyphicon glyphicon-remove remove-feed" title="{% trans 'Click to remove this feed' %}"></span>
       {% endif %}
-      <h3><a href="{% url 'profile' feed.user.username %}">{{ feed.user.profile.get_screen_name }}</a> <small>{{ feed.date|naturaltime }}</small></h3>
+      <h3><a href="{% url 'profile' feed.user.username %}">{{ feed.user.get_screen_name }}</a> <small>{{ feed.date|naturaltime }}</small></h3>
       <p>{{ feed.linkfy_post|safe }}</p>
       <div class="interaction">
         {% if user in feed.get_likers %}
