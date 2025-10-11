@@ -81,6 +81,19 @@ class Book(models.Model) :
     # BookRatesSum = models.IntegerField(default = 0, blank = True)
     # BookComments = models.ForeignKey('Book.Comment', null = True, blank = True)
 
+    def __init__(self, *args, **kwargs) :
+        super(Book, self).__init__(*args, **kwargs)
+        self.OldBookPublisher = self.BookPublisher
+        self.OldBookAuthor = self.BookAuthor
+
+    def save(self, **kwargs) :
+
+        if self.OldBookPublisher != self.BookPublisher and self.OldBookPublisher is not None :
+            print("PUBLISHER CHANGED", "OLD PUB: ", self.OldBookPublisher.PublisherName)
+            Publisher.objects.get(PublisherName = \
+            self.OldBookPublisher.PublisherName).ChangePublisherBook(self)
+        super(Book, self).save(**kwargs)
+
     def __str__(self) :
         return self.BookName
 
@@ -90,6 +103,11 @@ class Publisher(models.Model) :
 
     def getPublisherBooks(self) :
         return Book.objects.get(BookTranslator = self)
+
+    def ChangePublisherBook(self, Book):
+        print("CHANGE PUBLISHER CALLED", "BOOK: ", Book)
+        self.PublisherBooks = Book
+        super(Publisher, self).save()
 
     def __str__(self) :
         return self.PublisherName
